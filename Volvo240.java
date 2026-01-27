@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Volvo240 extends Cars{
+public class Volvo240 extends Car {
 
     public final static double trimFactor = 1.25;
    
@@ -9,7 +9,10 @@ public class Volvo240 extends Cars{
         color = Color.black;
         enginePower = 100;
         modelName = "Volvo240";
-        stopEngine();
+        xPos = 0;
+        yPos = 0;
+
+        stopEngine(); //Börja med currentspeed 0?
     }
     
     public double speedFactor(){

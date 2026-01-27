@@ -1,7 +1,6 @@
 import java.awt.*;
-//hej
 
-public class Saab95 extends Cars implements Movable{
+public class Saab95 extends Car{
 
     public boolean turboOn;
     
@@ -11,7 +10,8 @@ public class Saab95 extends Cars implements Movable{
         enginePower = 125;
 	    turboOn = false;
         modelName = "Saab95";
-        pos = new Point(xPos, yPos);
+        xPos = 0;
+        yPos = 0;
 
         stopEngine();
     }
