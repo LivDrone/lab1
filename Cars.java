@@ -1,15 +1,16 @@
 import java.awt.*;
 
 //Basklass
-abstract class Cars{ //Abstract pga vi vill extenda från den
+abstract class Cars{ //Abstract pga vi vill extenda från den, inte public 
 
     //Publika variabler
-    protected int nrDoors; // Number of doors on the car
-    protected double enginePower; // Engine power of the car
-    protected double currentSpeed; // The current speed of the car
-    protected Color color; // Color of the car
-    protected String modelName; // The car model name
-    protected Point pos;
+    private int nrDoors; // Number of doors on the car
+    private double enginePower; // Engine power of the car
+    private double currentSpeed; // The current speed of the car
+    private Color color; // Color of the car
+    private String modelName; // The car model name
+    private int x; //kanske point istället??
+    private int y; 
 
     //Metoder
     public int getNrDoors(){
@@ -32,14 +33,13 @@ abstract class Cars{ //Abstract pga vi vill extenda från den
     }
 
     public double getX(){
-        return xPos;
+        return x;
     }
     
     public double getY(){
-        return yPos;
+        return y;
     }
         
-
     public void startEngine(){
 	    currentSpeed = 0.1;
     }
