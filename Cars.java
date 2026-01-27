@@ -1,24 +1,17 @@
 import java.awt.*;
 
-//hjejjj
+//Basklass
+abstract class Cars{ //Abstract pga vi vill extenda från den
 
-public class Volvo240{
+    //Publika variabler
+    protected int nrDoors; // Number of doors on the car
+    protected double enginePower; // Engine power of the car
+    protected double currentSpeed; // The current speed of the car
+    protected Color color; // Color of the car
+    protected String modelName; // The car model name
+    protected Point pos;
 
-    public final static double trimFactor = 1.25;
-    public int nrDoors; // Number of doors on the car
-    public double enginePower; // Engine power of the car
-    public double currentSpeed; // The current speed of the car
-    public Color color; // Color of the car
-    public String modelName; // The car model name
-    
-    public Volvo240(){
-        nrDoors = 4;
-        color = Color.black;
-        enginePower = 100;
-        modelName = "Volvo240";
-        stopEngine();
-    }
-    
+    //Metoder
     public int getNrDoors(){
         return nrDoors;
     }
@@ -38,16 +31,21 @@ public class Volvo240{
 	    color = clr;
     }
 
+    public double getX(){
+        return xPos;
+    }
+    
+    public double getY(){
+        return yPos;
+    }
+        
+
     public void startEngine(){
 	    currentSpeed = 0.1;
     }
 
     public void stopEngine(){
 	    currentSpeed = 0;
-    }
-    
-    public double speedFactor(){
-        return enginePower * 0.01 * trimFactor;
     }
 
     public void incrementSpeed(double amount){
@@ -67,4 +65,5 @@ public class Volvo240{
     public void brake(double amount){
         decrementSpeed(amount);
     }
+
 }
