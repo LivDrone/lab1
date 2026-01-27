@@ -59,6 +59,10 @@ public class Saab95{
         return enginePower * 0.01 * turbo;
     }
 
+    /**
+     *
+     * @param amount
+     */
     public void incrementSpeed(double amount){
         currentSpeed = getCurrentSpeed() + speedFactor() * amount;
     }
