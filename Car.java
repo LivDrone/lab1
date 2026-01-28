@@ -1,0 +1,117 @@
+import java.awt.*;
+
+//Basklass
+abstract class Car implements Movable{ //Abstract pga vi vill extenda från den, inte public
+                                        //implements Movable för alla cars
+    //Publika variabler
+    protected int nrDoors; // Number of doors on the car
+    protected double enginePower; // Engine power of the car
+    protected double currentSpeed; // The current speed of the car
+    protected Color color; // Color of the car
+    protected String modelName; // The car model name
+    protected double xPos; //kanske point istället??
+    protected double yPos; //x/y separat för lättare hantering än Point
+    protected int direction = 0; // börjar peka y- positivt
+    protected double trim = 1;
+    //Metoder för interface: Movable
+    @Override //specifik implementering för Car
+    public void move() { //Modulär räkning annorlunda från python
+        if(direction % 4 == 0){
+            yPos += currentSpeed;
+        }
+        else if(direction % 4 == 1){
+            xPos += currentSpeed;
+        }
+        else if(direction % 4 == 2){
+            yPos -= currentSpeed;
+        }
+        else if(direction % 4 == 3){
+            xPos -= currentSpeed;
+        }
+    }
+
+    @Override
+    public void turnLeft() {
+        direction += 3;
+    }
+
+    @Override
+    public void turnRight() {
+        direction += 1;
+    }
+
+    //Metoder
+    public int getNrDoors(){ //Private?
+        return nrDoors;
+    }
+
+    public double getEnginePower(){
+        return enginePower;
+    } //Private?
+
+    public double getCurrentSpeed(){
+        if(currentSpeed > 0 && currentSpeed < enginePower){
+        return currentSpeed;
+        }
+        else if(currentSpeed > enginePower){
+            return enginePower;
+        }
+        else if(currentSpeed < 0){
+            return 0;
+        }
+        return 0;
+    } //Private?
+
+    public Color getColor(){
+        return color;
+    } //Private?
+
+    public void setColor(Color clr){
+	    color = clr;
+    } //Private?
+
+    public double getX(){
+        return xPos;
+    } //Private?
+    
+    public double getY(){ //Private?
+        return yPos;
+    }
+        
+    public void startEngine(){
+	    currentSpeed = 0.1;
+    }
+
+    public void stopEngine(){
+	    currentSpeed = 0;
+    }
+
+    public double speedFactor(){
+        return enginePower * 0.01 * trim;
+    }
+
+    public void incrementSpeed(double amount){
+        if (amount > 0 && Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower) > currentSpeed){
+            currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower);
+        }
+    }
+
+    public void decrementSpeed(double amount){
+        if (amount > 0 && Math.max(getCurrentSpeed() - speedFactor() * amount,0) < currentSpeed){
+            currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
+        }
+    }
+
+    public void gas(double amount){
+        if(amount >= 0 && amount <= 1){
+            incrementSpeed(amount);
+        }
+    }
+
+    public void brake(double amount){
+        if(amount >= 0 && amount <= 1){
+        decrementSpeed(amount);
+        }
+    }
+
+}
