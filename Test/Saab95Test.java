@@ -22,7 +22,7 @@ class Saab95Test {
     }
 
     @Test
-    void positionSaabAfterMoveWithTurbo(){
+    void saabSpeedWithTurbo(){
         var testSaab = new Saab95();
 
         testSaab.startEngine();
