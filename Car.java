@@ -1,5 +1,5 @@
 import java.awt.*;
-
+//hej
 //Basklass
 abstract class Car implements Movable{ //Abstract pga vi vill extenda från den, inte public
                                         //implements Movable för alla cars
@@ -14,8 +14,8 @@ abstract class Car implements Movable{ //Abstract pga vi vill extenda från den,
     protected int direction = 0; // börjar peka y- positivt
 
     //Metoder för interface: Movable
-    @Override
-    public void move() { //Modulär räkning annorlund från python
+    @Override //specifik implementering för Car
+    public void move() { //Modulär räkning annorlunda från python
         if(direction % 4 == 0){
             yPos += currentSpeed;
         }
