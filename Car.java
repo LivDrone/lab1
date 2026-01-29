@@ -1,7 +1,7 @@
 import java.awt.*;
 
 //Basklass
-abstract class Car implements Movable{ //Abstract pga vi vill extenda från den, inte public
+abstract class Car implements Movable{ //Abstract pga vi vill extenda från den
                                         //implements Movable för alla cars
     //Publika variabler
     private int nrDoors; // Number of doors on the car
@@ -41,9 +41,6 @@ abstract class Car implements Movable{ //Abstract pga vi vill extenda från den,
     }
 
     //Metoder--------------------------------------------------------
-
-    //Setters---------------------------------------------------------
-
     public void setNrDoors(int doors){
         nrDoors = doors;
     }
@@ -54,7 +51,7 @@ abstract class Car implements Movable{ //Abstract pga vi vill extenda från den,
 
     public double getEnginePower(){
         return enginePower;
-    } //Private?
+    }
 
     public double getCurrentSpeed(){
         if(currentSpeed > 0 && currentSpeed < enginePower){
@@ -67,19 +64,23 @@ abstract class Car implements Movable{ //Abstract pga vi vill extenda från den,
             return 0;
         }
         return 0;
-    } //Private?
+    }
 
     public Color getColor(){
         return color;
-    } //Private?
+    }
 
     public void setColor(Color clr){
 	    color = clr;
-    } //Private?
+    }
+
+    public void setX(double x){
+        xPos = x;
+    }
 
     public double getX(){
         return xPos;
-    } //Private?
+    }
 
     public void setY(double y){
         yPos = y;
