@@ -5,13 +5,13 @@ public class Saab95 extends Car{
     public double turbo = 1;
     
     public Saab95(){ //Konstruktor aka typ __init__, ger defaultvärden
-        nrDoors = 2;
-        color = Color.red;
-        enginePower = 125;
-        modelName = "Saab95";
-        xPos = 0;
-        yPos = 0;
-        trim = turbo;
+        setNrDoors(2);
+        setColor(Color.RED);
+        setEnginePower(125);
+        setModelName("Saab95");
+        setX(0);
+        setY(0);
+        setTrim(turbo);
         stopEngine();
     }
     

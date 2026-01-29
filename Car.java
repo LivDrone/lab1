@@ -4,15 +4,15 @@ import java.awt.*;
 abstract class Car implements Movable{ //Abstract pga vi vill extenda från den, inte public
                                         //implements Movable för alla cars
     //Publika variabler
-    protected int nrDoors; // Number of doors on the car
-    protected double enginePower; // Engine power of the car
-    protected double currentSpeed; // The current speed of the car
-    protected Color color; // Color of the car
-    protected String modelName; // The car model name
-    protected double xPos; //kanske point istället??
-    protected double yPos; //x/y separat för lättare hantering än Point
-    protected int direction = 0; // börjar peka y- positivt
-    protected double trim = 1;
+    private int nrDoors; // Number of doors on the car
+    private double enginePower; // Engine power of the car
+    private double currentSpeed; // The current speed of the car
+    private Color color; // Color of the car
+    private String modelName; // The car model name
+    private double xPos; //kanske point istället??
+    private double yPos; //x/y separat för lättare hantering än Point
+    private int direction = 0; // börjar peka y- positivt
+    private double trim = 1;
     //Metoder för interface: Movable
     @Override //specifik implementering för Car
     public void move() { //Modulär räkning annorlunda från python
@@ -40,7 +40,14 @@ abstract class Car implements Movable{ //Abstract pga vi vill extenda från den,
         direction += 1;
     }
 
-    //Metoder
+    //Metoder--------------------------------------------------------
+
+    //Setters---------------------------------------------------------
+
+    public void setNrDoors(int doors){
+        nrDoors = doors;
+    }
+
     public int getNrDoors(){ //Private?
         return nrDoors;
     }
@@ -73,7 +80,11 @@ abstract class Car implements Movable{ //Abstract pga vi vill extenda från den,
     public double getX(){
         return xPos;
     } //Private?
-    
+
+    public void setY(double y){
+        yPos = y;
+    }
+
     public double getY(){ //Private?
         return yPos;
     }
@@ -84,6 +95,10 @@ abstract class Car implements Movable{ //Abstract pga vi vill extenda från den,
 
     public void stopEngine(){
 	    currentSpeed = 0;
+    }
+
+    public void setTrim(double tune){
+        trim = tune;
     }
 
     public double speedFactor(){
