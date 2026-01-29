@@ -8,7 +8,7 @@ class Saab95Test {
         var testSaab = new Saab95();
 
         testSaab.startEngine();
-        testSaab.incrementSpeed(10);
+        testSaab.gas(1);
         testSaab.move();
         testSaab.turnRight();
         testSaab.move();
@@ -17,8 +17,8 @@ class Saab95Test {
         double x = testSaab.getX();
         double y = testSaab.getY();
 
-        assertEquals(12.6, x);
-        assertEquals(25.2, y);
+        assertEquals(1.35, x);
+        assertEquals(2.7, y);
     }
 
     @Test

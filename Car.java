@@ -105,13 +105,13 @@ abstract class Car implements Movable{ //Abstract pga vi vill extenda från den,
         return enginePower * 0.01 * trim;
     }
 
-    public void incrementSpeed(double amount){
+    private void incrementSpeed(double amount){
         if (amount > 0 && Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower) > currentSpeed){
             currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower);
         }
     }
 
-    public void decrementSpeed(double amount){
+    private void decrementSpeed(double amount){
         if (amount > 0 && Math.max(getCurrentSpeed() - speedFactor() * amount,0) < currentSpeed){
             currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
         }

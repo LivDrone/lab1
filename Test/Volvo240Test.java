@@ -8,7 +8,7 @@ class Volvo240Test {
         var testVolvo = new Volvo240();
 
         testVolvo.startEngine();
-        testVolvo.incrementSpeed(10);
+        testVolvo.gas(1);
         testVolvo.move();
         testVolvo.turnRight();
         testVolvo.move();
@@ -17,8 +17,8 @@ class Volvo240Test {
         double x = testVolvo.getX();
         double y = testVolvo.getY();
 
-        assertEquals(12.6, x);
-        assertEquals(25.2, y);
+        assertEquals(1.35, x);
+        assertEquals(2.7, y);
     }
 
     @Test
@@ -36,7 +36,11 @@ class Volvo240Test {
         var testVolvo = new Volvo240();
 
         testVolvo.startEngine();
-        testVolvo.incrementSpeed(1);
+        testVolvo.gas(1);
+        testVolvo.brake(1);
+
+        double speed = testVolvo.getCurrentSpeed();
+        assertEquals(0, speed);
 
 
     }
