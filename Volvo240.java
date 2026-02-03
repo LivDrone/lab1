@@ -4,18 +4,8 @@ public class Volvo240 extends Car {
 
     public final static double trimFactor = 1.25;
 
-
     public Volvo240(){
-        setNrDoors(4);
-        setColor(Color.black);
-        setEnginePower(100);
-        setModelName("Volvo240");
-        setX(0);
-        setY(0);
-        setTrim(trimFactor);
-        stopEngine();
+        super("Volvo240", 4, 100, Color.black, trimFactor);
     }
-    /*public double speedFactor(){
-        return enginePower * 0.01 * trimFactor;
-    }*/
+
 }

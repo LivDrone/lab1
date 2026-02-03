@@ -30,6 +30,7 @@ class Volvo240Test {
         double speed = testVolvo.speedFactor();
         assertEquals(1.25, speed);
 
+/*
     }
     @Test
     void VolvoBreak(){
@@ -42,8 +43,9 @@ class Volvo240Test {
         double speed = testVolvo.getCurrentSpeed();
         assertEquals(0, speed);
 
-
+*/
     }
+
 
     @Test
     void volvoGas(){

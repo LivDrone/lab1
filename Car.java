@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.lang.String;
 
 //Basklass
 abstract class Car implements Movable{ //Abstract pga vi vill extenda från den
@@ -9,10 +10,20 @@ abstract class Car implements Movable{ //Abstract pga vi vill extenda från den
     private double currentSpeed; // The current speed of the car
     private Color color; // Color of the car
     private String modelName; // The car model name
-    private double xPos; //kanske point istället??
-    private double yPos; //x/y separat för lättare hantering än Point
+    private double xPos = 0; //kanske point istället??
+    private double yPos = 0; //x/y separat för lättare hantering än Point
     private int direction = 0; // börjar peka y- positivt
     private double trim = 1;
+
+    public Car(String modelName, int nrDoors, double enginePower, Color color, double trim){
+        this.modelName = modelName;
+        this.nrDoors = nrDoors;
+        this.enginePower = enginePower;
+        this.color = color;
+        this.trim = trim;
+        stopEngine();
+    }
+
     //Metoder för interface: Movable
     @Override //specifik implementering för Car
     public void move() { //Modulär räkning annorlunda från python
@@ -48,6 +59,10 @@ abstract class Car implements Movable{ //Abstract pga vi vill extenda från den
     public int getNrDoors(){ //Private?
         return nrDoors;
     }
+
+    public void setEnginePower(int power){enginePower = power;}
+
+    public void setModelName(String model){modelName = model;}
 
     public double getEnginePower(){
         return enginePower;
