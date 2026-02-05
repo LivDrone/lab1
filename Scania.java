@@ -52,19 +52,23 @@ public class Scania extends Car implements Movable{
     }
 
     @Override
-    public void move(){ //Kolla med TA ferdag, finns det bättre sätt? skriv getDirection
+    public void move(){ //Kolla med TA fredag, finns det bättre sätt? skriv getDirection
         if(getAngle() == 0){
             if(getDirection() % 4 == 0){
-                getY() += getCurrentSpeed();
+                double y = getY() + getCurrentSpeed();
+                setY(y);
             }
             else if(getDirection() % 4 == 1){
-                getX() += getCurrentSpeed();
+                double x = getX() + getCurrentSpeed();
+                setX(x);
             }
             else if(getDirection() % 4 == 2){
-                getY() -= getCurrentSpeed();
+                double y = getY() - getCurrentSpeed();
+                setY(y);
             }
             else if(getDirection() % 4 == 3){
-                getX() -= getCurrentSpeed();
+                double x =  getX() - getCurrentSpeed();
+                setX(x);
             }
         }
     }
