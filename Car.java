@@ -55,6 +55,10 @@ abstract class Car implements Movable{ //Abstract pga vi vill extenda från den
         direction += 1;
     }
 
+    public int getDirection(){
+        return direction;
+    }
+
     //Metoder--------------------------------------------------------
     public void setNrDoors(int doors){
         nrDoors = doors;
@@ -70,6 +74,12 @@ abstract class Car implements Movable{ //Abstract pga vi vill extenda från den
 
     public double getEnginePower(){
         return enginePower;
+    }
+
+    public void setCurrentSpeed(double amount) {
+        if (amount >= 0 && amount <= enginePower) {
+            currentSpeed = amount;
+        }
     }
 
     public double getCurrentSpeed(){
