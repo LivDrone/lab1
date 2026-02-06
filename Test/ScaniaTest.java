@@ -2,16 +2,16 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ScaniaTest {
+class ScaniaTest  {
     @Test
     void startWhenOpenBed() {
         var testScania = new Scania();
 
-        testScania.raise(5);
+        testScania.raise();
         testScania.startEngine();
         double speed = testScania.getCurrentSpeed();
         assertEquals(0, speed);
-
+    }
 
     @Test
     void MoveWhenOpen(){
@@ -19,8 +19,8 @@ class ScaniaTest {
 
         testScania.startEngine();
         testScania.gas(0.5);
-        testScania.raise(5);
-        int angle = testScania.getAngle();
+        testScania.raise();
+        int angle = testScania.ramp.getAngle();
         assertEquals(0,angle);
 
     }
@@ -29,20 +29,27 @@ class ScaniaTest {
     void raiseAndLower(){
         var testScania = new Scania();
 
-        testScania.raise(15);
-        testScania.lower(10);
-        int angle = testScania.getAngle();
-        assertEquals(5, angle);
+        testScania.raise();
+        testScania.raise();
+        testScania.raise();
+        testScania.raise();
+        testScania.raise();
+        testScania.raise();
+        testScania.raise();
+        testScania.lower();
+        int angle = testScania.ramp.getAngle();
+        assertEquals(6, angle);
     }
 
     @Test
     void raiseWhileMoving(){
         var testScania = new Scania();
         testScania.startEngine();
-        testScania.raise(10);
-        int angle= testScania.getAngle();
+        testScania.raise();
+        int angle= testScania.ramp.getAngle();
 
         assertEquals(0, angle);
+
 
 
     }

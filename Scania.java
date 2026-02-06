@@ -1,66 +1,43 @@
 import java.awt.*;
 
-abstract class Scania extends Car implements Raiseable{
+class Scania extends Car implements Raiseable{
 
-    private int bedAngle;
-    private Ramp ramp;
+    public Ramp ramp;
 
     public Scania(){
         super("Scania", 2, 5000, new Color(9, 205, 218), 1);
         ramp = new Ramp(2, 70,0);
-
     }
-
     //flak
     @Override
     public void raise() {
         if (getCurrentSpeed() == 0) {
-            bedAngle+=1;
-
-            if (bedAngle > 70) {
-                bedAngle = 70;
-            }
-
-            if (bedAngle < 0) {
-                bedAngle = 0;
-            }
+            ramp.setAngle(ramp.getAngle() + 1);
         }
     }
+
     @Override
     public void lower(){
-            if (getCurrentSpeed() == 0) {
-                bedAngle -= 1;
-
-                if (bedAngle > 70) {
-                    bedAngle = 70;
-                }
-                if (bedAngle < 0) {
-                    bedAngle = 0;
-                }
-            }
+        if (getCurrentSpeed() == 0) {
+                ramp.setAngle(ramp.getAngle() - 1);
         }
-
-        public int getAngle(){
-        return bedAngle;
     }
 
     @Override
     public void startEngine(){
-            if(getAngle() == 0){
-                super.startEngine();
-            }
-
-
+        if(ramp.getAngle() == ramp.getMinAngle()){
+            super.startEngine();
+        }
     }
 
     @Override
     public void move(){
-        if(getAngle() == 0){
+        if(ramp.getAngle() == ramp.getMinAngle()){
            super.move();
-            }
         }
     }
-    
 }
+    
+
 
 
