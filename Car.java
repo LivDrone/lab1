@@ -23,10 +23,6 @@ abstract class Car implements Movable{ //Abstract pga vi vill extenda från den
         this.trim = trim;
         stopEngine();
     }
-    @Override
-    public void raise(){}
-    @Override
-    public void lower(){}
 
     //Metoder för interface: Movable
     @Override //specifik implementering för Car

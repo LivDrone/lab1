@@ -11,7 +11,7 @@ class ScaniaTest {
         testScania.startEngine();
         double speed = testScania.getCurrentSpeed();
         assertEquals(0, speed);
-    }
+
 
     @Test
     void MoveWhenOpen(){

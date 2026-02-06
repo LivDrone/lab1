@@ -1,18 +1,21 @@
 import java.awt.*;
 
-public class Scania extends Car implements Movable{
+abstract class Scania extends Car implements Raiseable{
 
     private int bedAngle;
+    private Ramp ramp;
 
     public Scania(){
         super("Scania", 2, 5000, new Color(9, 205, 218), 1);
+        ramp = new Ramp(2, 70,0);
 
     }
 
     //flak
-    public void raise(int amount) {
+    @Override
+    public void raise() {
         if (getCurrentSpeed() == 0) {
-            bedAngle += amount;
+            bedAngle+=1;
 
             if (bedAngle > 70) {
                 bedAngle = 70;
@@ -23,10 +26,10 @@ public class Scania extends Car implements Movable{
             }
         }
     }
-
-    public void lower(int amount){
+    @Override
+    public void lower(){
             if (getCurrentSpeed() == 0) {
-                bedAngle -= amount;
+                bedAngle -= 1;
 
                 if (bedAngle > 70) {
                     bedAngle = 70;
@@ -43,32 +46,17 @@ public class Scania extends Car implements Movable{
 
     @Override
     public void startEngine(){
-
             if(getAngle() == 0){
-                setCurrentSpeed(0.1);
+                super.startEngine();
             }
 
 
     }
 
     @Override
-    public void move(){ //Kolla med TA fredag, finns det bättre sätt? skriv getDirection
+    public void move(){
         if(getAngle() == 0){
-            if(getDirection() % 4 == 0){
-                double y = getY() + getCurrentSpeed();
-                setY(y);
-            }
-            else if(getDirection() % 4 == 1){
-                double x = getX() + getCurrentSpeed();
-                setX(x);
-            }
-            else if(getDirection() % 4 == 2){
-                double y = getY() - getCurrentSpeed();
-                setY(y);
-            }
-            else if(getDirection() % 4 == 3){
-                double x =  getX() - getCurrentSpeed();
-                setX(x);
+           super.move();
             }
         }
     }
