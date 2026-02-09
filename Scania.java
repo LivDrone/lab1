@@ -1,6 +1,6 @@
 import java.awt.*;
 
-class Scania extends Car implements Raiseable{
+class Scania extends Vehicle implements Raiseable{
 
     public Ramp ramp;
 

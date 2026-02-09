@@ -1,14 +1,14 @@
 import java.awt.*;
 
-public class Transport extends Car implements Raiseable {
+public class Transport extends Vehicle implements Raiseable {
 
     private Ramp ramp;
-    private Car car;
+    private Vehicle vehicle;
 
     public Transport(){
         super("Mack", 2, 67, Color.red, 1, 10);
         ramp = new Ramp(1, 1,0);
-        Loader<Car> loader = new Loader<> (car, 10, 6);
+        Loader<Vehicle> loader = new Loader<> (vehicle, 10, 6);
     }
 
 

@@ -2,7 +2,7 @@ import java.awt.*;
 import java.lang.String;
 
 //Basklass
-abstract class Car implements Movable{ //Abstract pga vi vill extenda från den
+abstract class Vehicle implements Movable{ //Abstract pga vi vill extenda från den
                                         //implements Movable för alla cars
     //Publika variabler
     private int nrDoors; // Number of doors on the car
@@ -16,7 +16,7 @@ abstract class Car implements Movable{ //Abstract pga vi vill extenda från den
     private double trim = 1;
     private double size;
 
-    public Car(String modelName, int nrDoors, double enginePower, Color color, double trim, double size){
+    public Vehicle(String modelName, int nrDoors, double enginePower, Color color, double trim, double size){
         this.modelName = modelName;
         this.nrDoors = nrDoors;
         this.enginePower = enginePower;

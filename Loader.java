@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Loader<T extends Car> implements Loadable<T>{
+public class Loader<T extends Vehicle> implements Loadable<T>{
 
     private ArrayList<T> loaded = new ArrayList<>();
     private T item;
