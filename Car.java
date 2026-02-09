@@ -14,13 +14,15 @@ abstract class Car implements Movable{ //Abstract pga vi vill extenda från den
     private double yPos = 0; //x/y separat för lättare hantering än Point
     private int direction = 0; // börjar peka y- positivt
     private double trim = 1;
+    private double size;
 
-    public Car(String modelName, int nrDoors, double enginePower, Color color, double trim){
+    public Car(String modelName, int nrDoors, double enginePower, Color color, double trim, double size){
         this.modelName = modelName;
         this.nrDoors = nrDoors;
         this.enginePower = enginePower;
         this.color = color;
         this.trim = trim;
+        this.size = size;
         stopEngine();
     }
 
@@ -130,6 +132,8 @@ abstract class Car implements Movable{ //Abstract pga vi vill extenda från den
     public double speedFactor(){
         return enginePower * 0.01 * trim;
     }
+
+    public double getSize(){ return size; }
 
     private void incrementSpeed(double amount){
         if (amount > 0 && Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower) > currentSpeed){

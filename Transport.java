@@ -2,12 +2,15 @@ import java.awt.*;
 
 public class Transport extends Car implements Raiseable {
 
-    public Ramp ramp;
+    private Ramp ramp;
+    private Car car;
 
     public Transport(){
-        super("Mack", 2, 67, Color.red, 1 );
+        super("Mack", 2, 67, Color.red, 1, 10);
         ramp = new Ramp(1, 1,0);
+        Loader<Car> loader = new Loader<> (car, 10, 6);
     }
+
 
     @Override
     public void raise() {

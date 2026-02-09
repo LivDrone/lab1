@@ -5,7 +5,7 @@ public class Saab95 extends Car{
     private static double turbo = 1;
     
     public Saab95(){ //Konstruktor aka typ __init__, ger defaultvärden
-        super("Saab95", 2, 125, Color.red, turbo);
+        super("Saab95", 2, 125, Color.red, turbo, 5);
     }
     
     public void setTurboOn(){turbo = 1.3;}
