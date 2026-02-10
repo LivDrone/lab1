@@ -2,7 +2,7 @@ import java.awt.*;
 
 public class Saab95 extends Vehicle {
 
-    private static double turbo = 1;
+    public static double turbo = 1;
     
     public Saab95(){ //Konstruktor aka typ __init__, ger defaultvärden
         super("Saab95", 2, 125, Color.red, turbo, 5);

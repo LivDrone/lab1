@@ -16,6 +16,9 @@ class TransportTest {
     @Test
     void loadOnAndOff(){
         var testTransport = new Transport();
+        var testSaab95 = new Saab95();
+
+        testTransport.loadOn(testSaab95);
 
         //testTransport.loadOn(Vehicle );
     }

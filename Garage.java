@@ -22,7 +22,8 @@ abstract class Garage<T extends Vehicle> {
 
         for (T v: loader.loaded) {
             if (v.getModelName().equals(modelName)) {
-                return loader.remove(v);
+                loader.loaded.remove(v);
+                return v;
             }
         }
         return null;
