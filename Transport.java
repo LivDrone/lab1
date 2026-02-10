@@ -3,14 +3,14 @@ import java.awt.*;
 public class Transport extends Vehicle implements Raiseable {
 
     private Ramp ramp;
-    private Vehicle vehicle;
+    private LoaderLifo<Vehicle> loaderLifo;
+
 
     public Transport(){
         super("Mack", 2, 67, Color.red, 1, 10);
         ramp = new Ramp(1, 1,0);
-        Loader<Vehicle> loader = new Loader<> (vehicle, 10, 6);
+        LoaderLifo<Vehicle> loaderLifo = new LoaderLifo<>(10, 6);
     }
-
 
     @Override
     public void raise() {
@@ -40,7 +40,10 @@ public class Transport extends Vehicle implements Raiseable {
         }
     }
 
+    public void LoaderLifo(Vehicle vehicle){
+        loaderLifo.loadOn(vehicle, getX(), getY());
 
 
+    }
 
 }
