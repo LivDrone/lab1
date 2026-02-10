@@ -7,9 +7,9 @@ public class Transport extends Vehicle implements Raiseable {
 
 
     public Transport(){
-        super("Mack", 2, 67, Color.red, 1, 10);
+        super("Mack", 2, 67, Color.red, 10);
         ramp = new Ramp(1, 1,0);
-        Loader<Vehicle> loader = new Loader<>(10, 6);
+        this.loader = new Loader<>(10, 6);
     }
 
     @Override

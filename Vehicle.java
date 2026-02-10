@@ -13,15 +13,13 @@ abstract class Vehicle implements Movable{ //Abstract pga vi vill extenda från 
     private double xPos = 0; //kanske point istället??
     private double yPos = 0; //x/y separat för lättare hantering än Point
     private int direction = 0; // börjar peka y- positivt
-    private double trim = 1;
     private double size;
 
-    public Vehicle(String modelName, int nrDoors, double enginePower, Color color, double trim, double size){
+    public Vehicle(String modelName, int nrDoors, double enginePower, Color color, double size){
         this.modelName = modelName;
         this.nrDoors = nrDoors;
         this.enginePower = enginePower;
         this.color = color;
-        this.trim = trim;
         this.size = size;
         stopEngine();
     }
@@ -127,12 +125,8 @@ abstract class Vehicle implements Movable{ //Abstract pga vi vill extenda från 
 	    currentSpeed = 0;
     }
 
-    public void setTrim(double tune){
-        trim = tune;
-    }
-
     public double speedFactor(){
-        return enginePower * 0.01 * trim;
+        return enginePower * 0.01;
     }
 
     public double getSize(){ return size; }

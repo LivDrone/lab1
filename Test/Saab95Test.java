@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class Saab95Test {
     @Test
     void positionSaabAfterMove(){
-        var testSaab = new Saab95();
+        var testSaab = new Saab95("Saab95");
 
         testSaab.startEngine();
         testSaab.gas(1);
@@ -25,7 +25,7 @@ class Saab95Test {
 
     @Test
     void saabSpeedWithTurbo(){
-        var testSaab = new Saab95();
+        var testSaab = new Saab95("Saab95");
 
         testSaab.startEngine();
         testSaab.setTurboOn();

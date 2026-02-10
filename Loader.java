@@ -12,21 +12,26 @@ public class Loader<T extends Vehicle> implements Loadable<T> {
         this.maxSize = maxSize; //Size of the loadable items
     }
 
-    private boolean calcDist(T item, double x, double y){
-        double y1= item.getY();
-        double x1 = item.getX();
-        double y2 = x;
-        double x2 = y;
+    private boolean calcDist(T item, double x, double y) {
+        double deltaX = Math.abs(item.getX() - x);
+        double deltaY = Math.abs(item.getY() - y);
 
-        if ((Math.abs(x2)-Math.abs(x1)>3) && (Math.abs(y2)-Math.abs(y1))>3){
+        if (deltaX < 3 && deltaY < 3) {
+            pickUp = true;
+        } else {
+            pickUp = false;
+        }
+
+        /*if ((Math.abs(x2)-Math.abs(x1)>3) && (Math.abs(y2)-Math.abs(y1))>3){
             pickUp=false;
         }
         if((Math.abs(x2)-Math.abs(x1)<3) && (Math.abs(y2)-Math.abs(y1))<3){
-            pickUp=true;
-        }
-        return pickUp;
+            pickUp=true;*/
 
+        return pickUp;
     }
+
+
 
 
     public void updatePos(double x, double y){
@@ -52,5 +57,7 @@ public class Loader<T extends Vehicle> implements Loadable<T> {
         return null;
 
     }
+
+    public ArrayDeque<T> getLoaded(){return loaded;}
 
 }

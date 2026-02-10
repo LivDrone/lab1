@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class Volvo240Test {
     @Test
     void positionVolvoAfterMove(){
-        var testVolvo = new Volvo240();
+        var testVolvo = new Volvo240("Volvo240");
 
         testVolvo.startEngine();
         testVolvo.gas(1);
@@ -23,7 +23,7 @@ class Volvo240Test {
 
     @Test
     void volvoSpeed(){
-        var testVolvo = new Volvo240();
+        var testVolvo = new Volvo240("Volvo240");
 
         testVolvo.startEngine();
 
@@ -34,7 +34,7 @@ class Volvo240Test {
     }
     @Test
     void VolvoBreak(){
-        var testVolvo = new Volvo240();
+        var testVolvo = new Volvo240("Volvo240");
 
         testVolvo.startEngine();
         testVolvo.gas(1);
@@ -49,7 +49,7 @@ class Volvo240Test {
 
     @Test
     void volvoGas(){
-        var testVolvo = new Volvo240();
+        var testVolvo = new Volvo240("Volvo240");
 
         testVolvo.startEngine();
         testVolvo.gas(0.5);

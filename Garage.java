@@ -33,4 +33,6 @@ abstract class Garage<T extends Vehicle> {
         loader.loadOn(item, getX(), getY());
     }
 
+    public Loader<T> getLoader(){return loader;}
+
 }
