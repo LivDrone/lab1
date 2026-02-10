@@ -3,13 +3,13 @@ import java.awt.*;
 public class Transport extends Vehicle implements Raiseable {
 
     private Ramp ramp;
-    private LoaderLifo<Vehicle> loaderLifo;
+    private Loader<Vehicle> loader;
 
 
     public Transport(){
         super("Mack", 2, 67, Color.red, 1, 10);
         ramp = new Ramp(1, 1,0);
-        LoaderLifo<Vehicle> loaderLifo = new LoaderLifo<>(10, 6);
+        Loader<Vehicle> loader = new Loader<>(10, 6);
     }
 
     @Override
@@ -37,13 +37,21 @@ public class Transport extends Vehicle implements Raiseable {
     public void move(){
         if(ramp.getAngle() == ramp.getMinAngle()){
             super.move();
+            loader.updatePos(getX(), getY());
         }
     }
 
-    public void LoaderLifo(Vehicle vehicle){
-        loaderLifo.loadOn(vehicle, getX(), getY());
+    public void loadOn(Vehicle vehicle){
+        if(getCurrentSpeed() == 0) {
+            loader.loadOn(vehicle, getX(), getY());
 
-
+        }
     }
 
+    public Vehicle loadOff(){
+        if(getCurrentSpeed() == 0) {
+            return loader.loadOff();
+        }
+        return null;
+    }
 }

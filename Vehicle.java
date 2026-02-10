@@ -70,6 +70,8 @@ abstract class Vehicle implements Movable{ //Abstract pga vi vill extenda från 
 
     public void setModelName(String model){modelName = model;}
 
+    public String getModelName(){return modelName;}
+
     public double getEnginePower(){
         return enginePower;
     }
