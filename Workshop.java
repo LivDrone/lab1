@@ -1,7 +1,7 @@
-public class Workshop extends Garage<Saab95>{
+public class Workshop extends Garage<Scania>{
 
-    public Workshop(){
-        super(10.0, 15.0, 10, 6);
+    public Workshop(double xPos, double yPos, int cap, int maxSize){
+        super(xPos, yPos, cap, maxSize);
     }
 
 

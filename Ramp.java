@@ -3,7 +3,7 @@ public class Ramp {
     public int capacity;
     private int maxAngle = 0;
     private int minAngle;
-    private boolean raised = false;
+    //private boolean raised = false;
     private int angle = minAngle;
 
     public Ramp(int capacity, int maxAngle, int minAngle){

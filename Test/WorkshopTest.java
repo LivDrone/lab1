@@ -4,9 +4,9 @@ import java.awt.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class WorkshopTest {
+class WorkshopTest { //Workshop typ som tas in avgörs i worksshop klassen.
 
-    @Test
+   /* @Test
     void loadWorkshop(){
         var testShop = new Workshop();
         var car1 = new Saab95("Alex");
@@ -34,12 +34,56 @@ class WorkshopTest {
         testShop.loadOn(car3);
         //testShop.loadOn(car4); går då fel typ, ger statiskt fel
 
-        testShop.loadOff("Anthon");
+        //testShop.loadOff("Anthon");
 
         assertTrue(testShop.getLoader().getLoaded().contains(car2));
 
 
+    }*/
+
+    /*@Test
+    void testCapacity(){
+        var testWorkshop = new Workshop(10,10,2,7);
+        var car1 = new Saab95("Alex");
+        var car2 = new Saab95("Liv");
+        var car3 = new Saab95("Anthon");
+
+        car1.setX(8);
+        car1.setY(12);
+
+        car2.setX(11);
+        car2.setY(11);
+
+        car3.setX(9);
+        car3.setY(12);
+
+        testWorkshop.loadOn(car1);
+        testWorkshop.loadOn(car2);
+        testWorkshop.loadOn(car3);
+
+        assertTrue(testWorkshop.getLoader().getLoaded().contains(car1));
+        assertTrue(testWorkshop.getLoader().getLoaded().contains(car2));
+        assertFalse(testWorkshop.getLoader().getLoaded().contains(car3));
+
+
+
+    }*/
+
+    @Test
+    public void testMaxsize(){
+        var testShop = new Workshop(10, 10, 2, 7);
+        var testScania = new Scania();
+
+        testScania.setX(11);
+        testScania.setY(11);
+        testShop.loadOn(testScania);
+
+        assertFalse(testShop.getLoader().getLoaded().contains(testScania));
+
+
+
     }
+
 
 
 }

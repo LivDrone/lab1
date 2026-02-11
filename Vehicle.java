@@ -138,7 +138,10 @@ abstract class Vehicle implements Movable{ //Abstract pga vi vill extenda från 
     }
 
     private void decrementSpeed(double amount){
-        if (amount > 0 && Math.max(getCurrentSpeed() - speedFactor() * amount,0) < currentSpeed){
+        if(amount == 1 && Math.max(getCurrentSpeed() - speedFactor() * amount,0) < currentSpeed ){ //Kolla om annan lösning
+            currentSpeed = 0;
+        }
+        else if (amount > 0 && Math.max(getCurrentSpeed() - speedFactor() * amount,0) < currentSpeed){
             currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
         }
     }
@@ -151,7 +154,7 @@ abstract class Vehicle implements Movable{ //Abstract pga vi vill extenda från 
 
     public void brake(double amount){
         if(amount >= 0 && amount <= 1){
-        decrementSpeed(amount);
+            decrementSpeed(amount);
         }
     }
 

@@ -15,14 +15,14 @@ public class Transport extends Vehicle implements Raiseable {
     @Override
     public void raise() {
         if (getCurrentSpeed() == 0) {
-            ramp.setAngle(ramp.getMaxAngle());
+            ramp.setAngle(ramp.getMinAngle());
         }
     }
 
     @Override
     public void lower(){
         if (getCurrentSpeed() == 0) {
-            ramp.setAngle(ramp.getMinAngle());
+            ramp.setAngle(ramp.getMaxAngle());
         }
     }
 
@@ -54,4 +54,9 @@ public class Transport extends Vehicle implements Raiseable {
         }
         return null;
     }
+
+    public Loader<Vehicle> getLoader(){return loader;}
+
+
 }
+
