@@ -16,7 +16,7 @@ class TransportTest {
     @Test
     void loadOnAndOff(){
         var testTransport = new Transport();
-        var testSaab95 = new Saab95("Saab95");
+        var testSaab95 = new Saab95();
 
         testTransport.loadOn(testSaab95);
 
@@ -48,7 +48,7 @@ class TransportTest {
     @Test
     void carMoveWithTransport(){
         var testTransport = new Transport();
-        var testSaab = new Saab95("HKU 28K");
+        var testSaab = new Saab95();
 
         testTransport.lower();
         testTransport.loadOn(testSaab);

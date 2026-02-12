@@ -47,7 +47,7 @@ class WorkshopTest { //Workshop typ som tas in avgörs i worksshop klassen.
         var car1 = new Saab95("Alex");
         var car2 = new Saab95("Liv");
         var car3 = new Saab95("Anthon");
-
+        Garage garane = new Garage<Volvo240>;
         car1.setX(8);
         car1.setY(12);
 

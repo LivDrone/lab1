@@ -1,4 +1,4 @@
-abstract class Garage<T extends Vehicle> {
+public class Garage<T extends Vehicle> {
 
     private Loader<T> loader;
     private double xPos;
@@ -18,10 +18,10 @@ abstract class Garage<T extends Vehicle> {
         return yPos;
     }
 
-    public T loadOff(String modelName) {
+    public T loadOff(Vehicle vehicle) {
 
         for (T v: loader.loaded) {
-            if (v.getModelName().equals(modelName)) {
+            if (v.equals(vehicle)) {
                 loader.loaded.remove(v);
                 return v;
             }
