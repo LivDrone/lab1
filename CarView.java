@@ -19,6 +19,9 @@ public class CarView extends JFrame{
 
     // The controller member
     CarController carC;
+    /*Kommentar: gör metod för att loopas igenom arraylist för cars från CarC
+    * som kallas i drawpanel, ska ge bild och koordinat / point för bilarna.
+    * */
 
     DrawPanel drawPanel = new DrawPanel(X, Y-240);
 
