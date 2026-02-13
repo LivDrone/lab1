@@ -14,6 +14,7 @@ abstract class Vehicle implements Movable{ //Abstract pga vi vill extenda från 
     private double yPos = 0; //x/y separat för lättare hantering än Point
     private int direction = 0; // börjar peka y- positivt
     private double size;
+    private String image;
 
     public Vehicle(String modelName, int nrDoors, double enginePower, Color color, double size){
         this.modelName = modelName;
@@ -56,6 +57,8 @@ abstract class Vehicle implements Movable{ //Abstract pga vi vill extenda från 
     }
 
     //Metoder--------------------------------------------------------
+
+
     public void setNrDoors(int doors){
         nrDoors = doors;
     }
