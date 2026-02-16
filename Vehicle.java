@@ -10,8 +10,8 @@ abstract class Vehicle implements Movable{ //Abstract pga vi vill extenda från 
     private double currentSpeed; // The current speed of the car
     private Color color; // Color of the car
     private String modelName; // The car model name
-    private double xPos = 0; //kanske point istället??
-    private double yPos = 0; //x/y separat för lättare hantering än Point
+    private double xPos = 1; //kanske point istället??
+    private double yPos = 1; //x/y separat för lättare hantering än Point
     private int direction = 0; // börjar peka y- positivt
     private double size;
     private String image;

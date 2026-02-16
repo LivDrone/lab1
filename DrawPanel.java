@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.sql.Array;
+import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -20,6 +22,8 @@ public class DrawPanel extends JPanel{
 
     // TODO: Make this general for all cars
     void moveit(int x, int y){
+
+
         vehiclePoint.x = x;  // Kommentar: Gör points för vehicle koordinater och gör denna metod mer genrell.
         vehiclePoint.y = y;
     }
