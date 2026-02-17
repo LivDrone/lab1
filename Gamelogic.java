@@ -4,9 +4,6 @@ import java.util.ArrayList;
 
 public class Gamelogic {
 
-
-
-
     public void turnAroundTest(Vehicle car){
         int carX = (int) car.getX();
         int carY = (int) car.getY();
@@ -51,11 +48,6 @@ public class Gamelogic {
 
     public boolean inGarageTest(Garage workshop, Vehicle car){
         return workshop.getLoader().getLoaded().contains(car);
-
-
-
     }
 
 }
-
-

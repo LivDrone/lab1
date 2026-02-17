@@ -55,7 +55,7 @@ public class DrawPanel extends JPanel{
             for (Vehicle v: vehicles){
                 try {
                     vehicleImage = ImageIO.read(DrawPanel.class.getResourceAsStream(v.getImage()));
-                    g.drawImage(vehicleImage, (int) v.getX(), (int) v.getY() , null);
+                    g.drawImage(vehicleImage, (int) v.getX(), (int) v.getY(), null);
                     //i += 100;
                 }catch (IOException ex)
                 {

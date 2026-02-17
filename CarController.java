@@ -26,6 +26,7 @@ public class CarController { // member fields:// The delay (ms) corresponds to 2
         cc.cars.add(new Volvo240());
         cc.cars.add(new Saab95());
         cc.cars.add(new Scania());
+        cc.placeVehicles(cc.cars);
 
         cc.volvoWorkshops = new Garage(Volvo240.class, 300, 300, 10, 7 );
         cc.gamelogic = new Gamelogic();// Start a new view and send a reference of self
@@ -57,6 +58,14 @@ public class CarController { // member fields:// The delay (ms) corresponds to 2
         }
     }
 
+
+    private void placeVehicles(ArrayList<Vehicle> vehicles){
+        int i = 1;
+        for (Vehicle v : vehicles){
+            v.setY(i);
+            i += 100;
+        }
+    }
     // Calls the gas method for each car once
     public void gas(double amount) {
         double gas = ((double) amount) / 100;
