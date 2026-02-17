@@ -5,7 +5,7 @@ class Scania extends Vehicle implements Raiseable{
     public Ramp ramp;
 
     public Scania(){
-        super("Scania", 2, 5000, new Color(9, 205, 218), 50);
+        super("Scania", 2, 5000, new Color(9, 205, 218), 50,"pics/Scania.jpg" );
         ramp = new Ramp(2, 70,0);
     }
     //flak

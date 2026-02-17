@@ -16,12 +16,13 @@ abstract class Vehicle implements Movable{ //Abstract pga vi vill extenda från 
     private double size;
     private String image;
 
-    public Vehicle(String modelName, int nrDoors, double enginePower, Color color, double size){
+    public Vehicle(String modelName, int nrDoors, double enginePower, Color color, double size, String image){
         this.modelName = modelName;
         this.nrDoors = nrDoors;
         this.enginePower = enginePower;
         this.color = color;
         this.size = size;
+        this.image = image;
         stopEngine();
     }
 
@@ -139,6 +140,8 @@ abstract class Vehicle implements Movable{ //Abstract pga vi vill extenda från 
             currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower);
         }
     }
+
+    public String getImage() {return image;}
 
     private void decrementSpeed(double amount){
         if(amount == 1 && Math.max(getCurrentSpeed() - speedFactor() * amount,0) < currentSpeed ){ //Kolla om annan lösning
