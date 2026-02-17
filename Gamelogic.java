@@ -40,14 +40,20 @@ public class Gamelogic {
             carY < garY + garH &&
             carY + carH > garY){
             workshop.loadOn(car);
-            if (inGarageTest(workshop, car)){
-                cars.remove(car);
             }
         }
-    }
-
+    
+    
     public boolean inGarageTest(Garage workshop, Vehicle car){
         return workshop.getLoader().getLoaded().contains(car);
     }
-
+        
+    public void putInGarageIfNeeded(Garage workshop, Vehicle car){
+        if (inGarageTest(workshop, car)){
+            car.setX(workshop.getX());
+            car.setY(workshop.getY());
+            }
+        }
 }
+
+

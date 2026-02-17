@@ -1,6 +1,6 @@
 public class Garage<T extends Vehicle> {
 
-    private final Class<T> allowedType;
+    private Class<T> allowedType;
     private Loader<T> loader;
     private double xPos;
     private double yPos;
