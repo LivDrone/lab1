@@ -43,11 +43,19 @@ public class Loader<T extends Vehicle> implements Loadable<T> {
 
     @Override
     public void loadOn(T item, double x, double y) {
+        if (loaded.size() < capacity && item.getSize() <= maxSize) {
+            loaded.add(item);
+        }
+    }
+    /*             ###### Beräkningen på hur nära bilarna är görs i Gamelogic #######
+    @Override
+    public void loadOn(T item, double x, double y) {
         boolean calc = calcDist(item, x,y);
         if (loaded.size() < capacity && item.getSize() <= maxSize && calc) {
             loaded.add(item);
         }
     }
+    */
 
     @Override
     public T loadOff() {

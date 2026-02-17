@@ -14,7 +14,7 @@ public class Gamelogic {
         int carH = 50;
 
         int maxX = 800;
-        int maxY = 400;
+        int maxY = 550;
         int minX = 0;
         int minY = 0;
 
@@ -27,7 +27,7 @@ public class Gamelogic {
         }
     }
 
-    public void loadOnGarageTest(Garage workshop, Vehicle car){
+    public void loadOnGarageIfClose(Garage workshop, Vehicle car, ArrayList<Vehicle> cars){
         int carX = (int) car.getX();
         int carY = (int) car.getY();
         int carW = 80;
@@ -43,14 +43,17 @@ public class Gamelogic {
             carY < garY + garH &&
             carY + carH > garY){
             workshop.loadOn(car);
+            if (inGarageTest(workshop, car)){
+                cars.remove(car);
+            }
         }
     }
 
-    public boolean notInGarageTest(Garage workshop, Vehicle car){
-        if (workshop.getLoader().getLoaded().contains(car)){
-            return false;
-        }
-        return true;
+    public boolean inGarageTest(Garage workshop, Vehicle car){
+        return workshop.getLoader().getLoaded().contains(car);
+
+
+
     }
 
 }

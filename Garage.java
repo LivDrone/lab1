@@ -1,10 +1,12 @@
 public class Garage<T extends Vehicle> {
 
+    private final Class<T> allowedType;
     private Loader<T> loader;
     private double xPos;
     private double yPos;
 
-    public Garage(double xPos, double yPos, int capacity, int maxSize) { //Constructor
+    public Garage(Class<T> allowedType, double xPos, double yPos, int capacity, int maxSize) { //Constructor
+        this.allowedType = allowedType;
         this.loader = new Loader<>(capacity,maxSize);
         this.xPos = xPos;
         this.yPos = yPos;

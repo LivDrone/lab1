@@ -51,12 +51,12 @@ public class DrawPanel extends JPanel{
         }
 
         public void carImages(ArrayList<Vehicle> vehicles, Graphics g){
-            int i = 0;
+            //int i = 0;
             for (Vehicle v: vehicles){
                 try {
                     vehicleImage = ImageIO.read(DrawPanel.class.getResourceAsStream(v.getImage()));
-                    g.drawImage(vehicleImage, (int) v.getX(), (int) v.getY() + i, null);
-                    i += 100;
+                    g.drawImage(vehicleImage, (int) v.getX(), (int) v.getY() , null);
+                    //i += 100;
                 }catch (IOException ex)
                 {
                     ex.printStackTrace();

@@ -27,7 +27,7 @@ public class CarController { // member fields:// The delay (ms) corresponds to 2
         cc.cars.add(new Saab95());
         cc.cars.add(new Scania());
 
-        cc.volvoWorkshops = new Garage(300, 300, 10, 7);
+        cc.volvoWorkshops = new Garage(Volvo240.class, 300, 300, 10, 7 );
         cc.gamelogic = new Gamelogic();// Start a new view and send a reference of self
         cc.frame = new CarView("CarSim 1.0", cc);
 
@@ -45,16 +45,14 @@ public class CarController { // member fields:// The delay (ms) corresponds to 2
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             for (Vehicle car : cars) {
-                if (gamelogic.notInGarageTest(volvoWorkshops, car)){
-                    gamelogic.turnAroundTest(car);
-                    car.move();
-                    int x = (int) Math.round(car.getX());
-                    int y = (int) Math.round(car.getY());
-                    frame.drawPanel.moveit(x, y);
-                    // repaint() calls the paintComponent method of the panel
-                    frame.drawPanel.repaint();
-                    gamelogic.loadOnGarageTest(volvoWorkshops, car);
-                }
+                gamelogic.turnAroundTest(car);
+                car.move();
+                int x = (int) Math.round(car.getX());
+                int y = (int) Math.round(car.getY());
+                frame.drawPanel.moveit(x, y);
+                frame.drawPanel.repaint();
+                gamelogic.loadOnGarageIfClose(volvoWorkshops, car, cars);
+                gamelogic.inGarageTest(volvoWorkshops, car);
             }
         }
     }
