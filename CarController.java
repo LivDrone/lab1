@@ -45,7 +45,7 @@ public class CarController { // member fields:// The delay (ms) corresponds to 2
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             for (Vehicle car : cars) {
-                if (gamelogic.alreadyInGarageTest(volvoWorkshops, car)){
+                if (gamelogic.notInGarageTest(volvoWorkshops, car)){
                     gamelogic.turnAroundTest(car);
                     car.move();
                     int x = (int) Math.round(car.getX());
@@ -131,4 +131,3 @@ public class CarController { // member fields:// The delay (ms) corresponds to 2
     }
 }
 
-// hej

@@ -45,12 +45,12 @@ abstract class Vehicle implements Movable{ //Abstract pga vi vill extenda från 
 
     @Override
     public void turnLeft() {
-        direction += 3;
+        direction += 1;
     }
 
     @Override
     public void turnRight() {
-        direction += 1;
+        direction += 3;
     }
 
     public int getDirection(){

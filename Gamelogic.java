@@ -8,28 +8,49 @@ public class Gamelogic {
 
 
     public void turnAroundTest(Vehicle car){
-            if(car.getX() == 800 || car.getY() == 600 || car.getX() == 0 || car.getY() == 0) {
-                car.turnLeft();
-                car.turnLeft();
+        int carX = (int) car.getX();
+        int carY = (int) car.getY();
+        int carW = 100;
+        int carH = 50;
+
+        int maxX = 800;
+        int maxY = 400;
+        int minX = 0;
+        int minY = 0;
+
+        if (carX + carW >= maxX ||
+            carY + carH >= maxY ||
+            carX <= minX ||
+            carY <= minY){
+            car.turnLeft();
+            car.turnLeft();
         }
     }
 
     public void loadOnGarageTest(Garage workshop, Vehicle car){
-        if((car.getX() > workshop.getX() || car.getX() < (workshop.getX() + 100)
-                && (car.getY() > workshop.getY() || car.getY() < (workshop.getY()) + 100))){
-            workshop.loadOn(car);
-        }
-        if(((car.getX() + 80) > workshop.getX() || (car.getX() + 80) < (workshop.getY() + 100))
-                && ((car.getY() + 50) > workshop.getY() || (car.getY() + 50) < (workshop.getY()) + 100)){
+        int carX = (int) car.getX();
+        int carY = (int) car.getY();
+        int carW = 80;
+        int carH = 50;
+
+        int garX = (int) workshop.getX();
+        int garY = (int) workshop.getY();
+        int garW = 100;
+        int garH = 100;
+
+        if (carX < garX + garW &&
+            carX + carW > garX &&
+            carY < garY + garH &&
+            carY + carH > garY){
             workshop.loadOn(car);
         }
     }
 
-    public boolean alreadyInGarageTest(Garage workshop, Vehicle car){
+    public boolean notInGarageTest(Garage workshop, Vehicle car){
         if (workshop.getLoader().getLoaded().contains(car)){
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
 }

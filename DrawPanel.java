@@ -12,7 +12,6 @@ public class DrawPanel extends JPanel{
 
     Gamelogic logic;
     CarController cc;
-    //ArrayList<Vehicle> vehicles;
     // Just a single image, TODO: Generalize
     BufferedImage vehicleImage;
     // To keep track of a single car's position
@@ -52,8 +51,8 @@ public class DrawPanel extends JPanel{
         }
 
         public void carImages(ArrayList<Vehicle> vehicles, Graphics g){
+            int i = 0;
             for (Vehicle v: vehicles){
-                int i = 0;
                 try {
                     vehicleImage = ImageIO.read(DrawPanel.class.getResourceAsStream(v.getImage()));
                     g.drawImage(vehicleImage, (int) v.getX(), (int) v.getY() + i, null);
