@@ -32,7 +32,10 @@ public class Garage<T extends Vehicle> {
     }
 
     public void loadOn(T item){
-        loader.loadOn(item, getX(), getY());
+        if (allowedType.isInstance(item)){
+            loader.loadOn(item, getX(), getY());
+        }
+
     }
 
     public Loader<T> getLoader(){return loader;}
