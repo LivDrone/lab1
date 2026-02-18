@@ -49,12 +49,11 @@ public class CarController { // member fields:// The delay (ms) corresponds to 2
                 if(gamelogic.inGarageTest(volvoWorkshops, car)) {continue;}
                 gamelogic.turnAroundTest(car);
                 car.move();
-                int x = (int) Math.round(car.getX());
-                int y = (int) Math.round(car.getY());
-                frame.drawPanel.moveit(x, y);
-                frame.drawPanel.repaint();
+                //int x = (int) Math.round(car.getX());
+                //int y = (int) Math.round(car.getY());
+                //frame.drawPanel.moveit(x, y);
+                frame.drawPanel.repaint(); 
                 gamelogic.loadOnGarageIfClose(volvoWorkshops, car, cars);
-                gamelogic.putInGarageIfNeeded(volvoWorkshops, car);
             }
         }
     }

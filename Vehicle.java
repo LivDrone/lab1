@@ -28,7 +28,7 @@ abstract class Vehicle implements Movable{ //Abstract pga vi vill extenda från 
 
     //Metoder för interface: Movable
     @Override //specifik implementering för Car
-    public void move() { //Modulär räkning annorlunda från python
+    public void move(){ //Modulär räkning annorlunda från python
         if(direction % 4 == 0){
             yPos += currentSpeed;
         }
