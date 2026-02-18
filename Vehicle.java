@@ -15,6 +15,7 @@ abstract class Vehicle implements Movable{ //Abstract pga vi vill extenda från 
     private int direction = 0; // börjar peka y- positivt
     private double size;
     private String image;
+    private boolean engineOn =  false;
 
     public Vehicle(String modelName, int nrDoors, double enginePower, Color color, double size, String image){
         this.modelName = modelName;
@@ -122,11 +123,13 @@ abstract class Vehicle implements Movable{ //Abstract pga vi vill extenda från 
     }
         
     public void startEngine(){
-	    currentSpeed = 0.1;
+	    engineOn = true;
+        currentSpeed = 0.1;
     }
 
     public void stopEngine(){
-	    currentSpeed = 0;
+	    engineOn = false;
+        currentSpeed = 0;
     }
 
     public double speedFactor(){
@@ -153,7 +156,7 @@ abstract class Vehicle implements Movable{ //Abstract pga vi vill extenda från 
     }
 
     public void gas(double amount){
-        if(amount >= 0 && amount <= 1){
+        if(amount >= 0 && amount <= 1 && engineOn){
             incrementSpeed(amount);
         }
     }

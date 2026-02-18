@@ -1,5 +1,4 @@
 public class Ramp {
-
     private int maxAngle = 0;
     private int minAngle;
     private int angle = minAngle;

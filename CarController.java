@@ -26,6 +26,7 @@ public class CarController { // member fields:// The delay (ms) corresponds to 2
         cc.cars.add(new Volvo240());
         cc.cars.add(new Saab95());
         cc.cars.add(new Scania());
+        cc.cars.add(new Scania());
         cc.placeVehicles(cc.cars);
 
         cc.volvoWorkshops = new Garage(Volvo240.class, 300, 300, 10, 7 );
