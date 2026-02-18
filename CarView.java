@@ -10,7 +10,6 @@ import java.awt.event.ActionListener;
  * It initializes with being center on the screen and attaching it's controller in it's state.
  * It communicates with the Controller by calling methods of it when an action fires of in
  * each of it's components.
- * TODO: Write more actionListeners and wire the rest of the buttons
  **/
 
 public class CarView extends JFrame{
@@ -19,14 +18,9 @@ public class CarView extends JFrame{
 
     // The controller member
     CarController cc;
-    /*Kommentar: gör metod för att loopas igenom arraylist för cars från CarC
-    * som kallas i drawpanel, ska ge bild och koordinat / point för bilarna.
-    * */
     DrawPanel drawPanel;
-    //DrawPanel drawPanel = new DrawPanel(X, Y-240, cc);
 
     JPanel controlPanel = new JPanel();
-
     JPanel gasPanel = new JPanel();
     JSpinner gasSpinner = new JSpinner();
 
