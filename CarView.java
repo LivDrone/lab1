@@ -48,16 +48,11 @@ public class CarView extends JFrame{
     }
 
     // Sets everything in place and fits everything
-    // TODO: Take a good look and make sure you understand how these methods and components work
     private void initComponents(String title) {
-    // Gör själva rutan för spelet??
         this.setTitle(title);
         this.setPreferredSize(new Dimension(X,Y));
         this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-
         this.add(drawPanel);
-
-
 
         SpinnerModel spinnerModel =
                 new SpinnerNumberModel(0, //initial value
@@ -105,16 +100,13 @@ public class CarView extends JFrame{
         stopButton.setPreferredSize(new Dimension(X/5-15,200));
         this.add(stopButton);
 
-
-        // This actionListener is for the gas button only
-        // TODO: Create more for each component as necessary
+        //Actionlisteners
         gasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 cc.gas(gasAmount);
             }
         });
-
         brakeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -167,11 +159,8 @@ public class CarView extends JFrame{
             }
         });
 
-
-
         // Make the frame pack all it's components by respecting the sizes if possible.
         this.pack();
-
         // Get the computer screen resolution
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         // Center the frame

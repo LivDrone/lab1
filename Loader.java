@@ -21,13 +21,6 @@ public class Loader<T extends Vehicle> implements Loadable<T> {
         } else {
             pickUp = false;
         }
-
-        /*if ((Math.abs(x2)-Math.abs(x1)>3) && (Math.abs(y2)-Math.abs(y1))>3){
-            pickUp=false;
-        }
-        if((Math.abs(x2)-Math.abs(x1)<3) && (Math.abs(y2)-Math.abs(y1))<3){
-            pickUp=true;*/
-
         return pickUp;
     }
 
@@ -47,6 +40,7 @@ public class Loader<T extends Vehicle> implements Loadable<T> {
             loaded.add(item);
         }
     }
+
     /*             ###### Beräkningen på hur nära bilarna är görs i Gamelogic #######
     @Override
     public void loadOn(T item, double x, double y) {

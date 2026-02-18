@@ -12,10 +12,7 @@ public class DrawPanel extends JPanel{
 
     Gamelogic logic;
     CarController cc;
-    // Just a single image, TODO: Generalize
     BufferedImage vehicleImage;
-    // To keep track of a single car's position
-    Point vehiclePoint = new Point();
 
     //Do not change, we want a specific volvo workshop so it does not need to be generalized
     BufferedImage volvoWorkshopImage;
@@ -44,35 +41,25 @@ public class DrawPanel extends JPanel{
         }
     }
 
-        // TODO: Make this general for all cars
-        void moveit(int x, int y){
-            vehiclePoint.x = x;  // Kommentar: Gör points för vehicle koordinater och gör denna metod mer genrell.
-            vehiclePoint.y = y;
-        }
 
         public void carImages(ArrayList<Vehicle> vehicles, Graphics g){
-            //int i = 0;
             for (Vehicle v: vehicles){
                 try {
                     vehicleImage = ImageIO.read(DrawPanel.class.getResourceAsStream(v.getImage()));
                     g.drawImage(vehicleImage, (int) v.getX(), (int) v.getY(), null);
-                    //i += 100;
-                }catch (IOException ex)
+                }
+                catch (IOException ex)
                 {
                     ex.printStackTrace();
                 }
             }
-            }
+        }
 
     // This method is called each time the panel updates/refreshes/repaints itself
-    // TODO: Change to suit your needs.
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         carImages(cc.getArraylist(), g);
-        //g.drawImage(vehicleImage, vehiclePoint.x, vehiclePoint.y, null);
-        //g.drawImage(vehicleImage, vehiclePoint.x, vehiclePoint.y+100, null);
-        //g.drawImage(vehicleImage, vehiclePoint.x, vehiclePoint.y+200, null);// see javadoc for more info on the parameters
         g.drawImage(volvoWorkshopImage, volvoWorkshopPoint.x, volvoWorkshopPoint.y, null);
     }
 }
