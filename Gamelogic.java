@@ -43,8 +43,7 @@ public class Gamelogic {
             putInGarage(workshop, car);
             }
         }
-    
-    
+
     public boolean inGarageTest(Garage workshop, Vehicle car){
         return workshop.getLoader().getLoaded().contains(car);
     }

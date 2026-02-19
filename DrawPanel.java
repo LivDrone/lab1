@@ -32,8 +32,7 @@ public class DrawPanel extends JPanel{
         }
     }
 
-
-        public void carImages(ArrayList<Vehicle> vehicles, Graphics g){
+    public void carImages(ArrayList<Vehicle> vehicles, Graphics g){
             for (Vehicle v: vehicles){
                 try {
                     vehicleImage = ImageIO.read(DrawPanel.class.getResourceAsStream(v.getImage()));

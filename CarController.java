@@ -18,6 +18,7 @@ public class CarController {
         CarController cc = new CarController();
         //Cars in game:
         cc.cars.add(new Volvo240());
+        cc.cars.add(new Volvo240());
         cc.cars.add(new Saab95());
         cc.cars.add(new Scania());
         cc.cars.add(new Scania());
