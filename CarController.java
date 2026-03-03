@@ -49,10 +49,16 @@ public class CarController {
     }
 
     private void placeVehicles(ArrayList<Vehicle> vehicles){
-        int i = 1;
+        int y = 1;
+        int x = 1;
         for (Vehicle v : vehicles){
-            v.setY(i);
-            i += 100;
+            v.setY(y);
+            y += 100;
+            if(y > 500){
+                y = 1;
+                x += 100;
+                v.setX(x);
+            }
         }
     }
 
