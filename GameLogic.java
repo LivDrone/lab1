@@ -1,8 +1,6 @@
-import javax.imageio.ImageIO;
-import java.awt.*;
 import java.util.ArrayList;
 
-public class Gamelogic {
+public class GameLogic {
 
     public void turnAroundTest(Vehicle car){
         int carX = (int) car.getX();

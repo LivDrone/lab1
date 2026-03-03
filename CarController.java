@@ -10,7 +10,7 @@ public class CarController {
     CarView frame;// The frame that represents this instance View of the MVC pattern
     ArrayList<Vehicle> cars = new ArrayList<>(); //List for cars in game
     Garage volvoWorkshops;
-    Gamelogic gamelogic;
+    GameLogic gamelogic;
 
     //methods:
     public static void main(String[] args) {// Instance of this class
@@ -25,7 +25,7 @@ public class CarController {
         // cc.placeVehicles(cc.cars);
 
         cc.volvoWorkshops = new Garage(Volvo240.class, 300, 300, 10, 7 );
-        cc.gamelogic = new Gamelogic();// Start a new view and send a reference of self
+        cc.gamelogic = new GameLogic();// Start a new view and send a reference of self
         cc.frame = new CarView("CarSim 1.0", cc);
         cc.timer.start();// Start the timer
     }
@@ -35,6 +35,7 @@ public class CarController {
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             for (Vehicle car : cars) {
+                gamelogic.update();
                 if(gamelogic.inGarageTest(volvoWorkshops, car)) {continue;}
                 gamelogic.turnAroundTest(car);
                 car.move();
@@ -53,6 +54,7 @@ public class CarController {
         for (Vehicle car : cars) {
             car.gas(gas);
         }
+
     }
 
     public void brake(double amount) {
@@ -60,6 +62,9 @@ public class CarController {
         for (Vehicle car : cars) {
             car.brake(brake);
         }
+
+        //model.breakeAllCars(breake)
+
     }
 
     public void saabTurboOn() {

@@ -1,7 +1,6 @@
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.sql.Array;
 import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -9,7 +8,7 @@ import javax.swing.*;
 // This panel represents the animated part of the view with the car images.
 public class DrawPanel extends JPanel{
 
-    Gamelogic logic;
+    GameLogic logic;
     CarController cc;
     BufferedImage vehicleImage;
 
