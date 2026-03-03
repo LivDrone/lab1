@@ -1,4 +1,4 @@
-import javax.swing.*;
+/**import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class CarController {
     private final int delay = 50;// The delay (ms) corresponds to 20 updates a sec (hz)
     private Timer timer = new Timer(delay, new TimerListener());// The timer is started with a listener (see below) that executes the statements// each step between delays.
-    CarView frame;// The frame that represents this instance View of the MVC pattern
+    GameView frame;// The frame that represents this instance View of the MVC pattern
     ArrayList<Vehicle> cars = new ArrayList<>(); //List for cars in game
     Garage volvoWorkshops;
     GameLogic gamelogic;
@@ -26,12 +26,12 @@ public class CarController {
 
         cc.volvoWorkshops = new Garage(Volvo240.class, 300, 300, 10, 7 );
         cc.gamelogic = new GameLogic();// Start a new view and send a reference of self
-        cc.frame = new CarView("CarSim 1.0", cc);
+        cc.frame = new GameView("CarSim 1.0", cc);
         cc.timer.start();// Start the timer
     }
     /* Each step the TimerListener moves all the cars in the list and tells the
      * view to update its images. Change this method to your needs.
-     * */
+
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             for (Vehicle car : cars) {
@@ -123,4 +123,4 @@ public class CarController {
         }
     }
 }
-
+**/

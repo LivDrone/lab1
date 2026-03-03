@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
  * each of it's components.
  **/
 
-public class CarView extends JFrame{
+/**public class CarView extends JFrame{
     private static final int X = 800;
     private static final int Y = 800;
 
@@ -98,9 +98,9 @@ public class CarView extends JFrame{
         stopButton.setBackground(Color.red);
         stopButton.setForeground(Color.black);
         stopButton.setPreferredSize(new Dimension(X/5-15,200));
-        this.add(stopButton);
+        this.add(stopButton);**/
 
-        //Actionlisteners
+       /** //Actionlisteners
         gasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -157,9 +157,9 @@ public class CarView extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 cc.turnRight();
             }
-        });
+        });**/
 
-        // Make the frame pack all it's components by respecting the sizes if possible.
+       /** // Make the frame pack all it's components by respecting the sizes if possible.
         this.pack();
         // Get the computer screen resolution
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -169,5 +169,4 @@ public class CarView extends JFrame{
         this.setVisible(true);
         // Make sure the frame exits when "x" is pressed
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
-}
+    }**/
