@@ -22,7 +22,7 @@ public class CarController {
         cc.cars.add(new Saab95());
         cc.cars.add(new Scania());
         cc.cars.add(new Scania());
-        cc.placeVehicles(cc.cars);
+        // cc.placeVehicles(cc.cars);
 
         cc.volvoWorkshops = new Garage(Volvo240.class, 300, 300, 10, 7 );
         cc.gamelogic = new Gamelogic();// Start a new view and send a reference of self
@@ -46,20 +46,6 @@ public class CarController {
 
     public ArrayList<Vehicle> getArraylist() {
         return cars;
-    }
-
-    private void placeVehicles(ArrayList<Vehicle> vehicles){
-        int y = 1;
-        int x = 1;
-        for (Vehicle v : vehicles){
-            v.setY(y);
-            y += 100;
-            if(y > 500){
-                y = 1;
-                x += 100;
-                v.setX(x);
-            }
-        }
     }
 
     public void gas(double amount) {

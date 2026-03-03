@@ -54,6 +54,23 @@ public class Gamelogic {
             car.setY(workshop.getY());
             }
         }
+
+    public void placeVehicles(ArrayList<Vehicle> vehicles){
+        int y = 1;
+        int x = 1;
+        for (Vehicle v : vehicles){
+            v.setY(y);
+            y += 100;
+            if(y > 500){
+                y = 1;
+                x += 100;
+                v.setX(x);
+            }
+        }
+    }
 }
 
 
+//add cars?
+
+//methods move
