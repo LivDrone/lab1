@@ -16,9 +16,26 @@ public class GameState {
 
     public GameState(){
         gs = this;
-        gl = new GameLogic(gs);
-        gc = new GameController(gs);
         gv = new GameView("Gamesim 2.0", gs);
+        gc = new GameController(gs);
+        gl = new GameLogic(gs);
+
+
+        volvoWorkshops = new Garage(Volvo240.class, 300, 300, 10, 7 );
+
+        cars.add(new Volvo240());
+        cars.add(new Volvo240());
+        cars.add(new Saab95());
+        cars.add(new Scania());
+        cars.add(new Scania());
+        cars.add(new Saab95());
+        cars.add(new Scania());
+        cars.add(new Scania());
+        gl.pl.placeVehicles(cars);
+
+        timer.start();
+
+
     }
 
     private class TimerListener implements ActionListener {

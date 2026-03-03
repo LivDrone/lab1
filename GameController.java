@@ -9,9 +9,10 @@ public class GameController{
 
     public GameController(GameState gs) {
         this.gs = gs;
+        initComponants();
     }
 
-    public void initComp() {
+    public void initComponants () {
         gs.gv.gasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

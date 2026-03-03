@@ -56,12 +56,12 @@ public class PhysicsLogic {
         int y = 1;
         int x = 1;
         for (Vehicle v : vehicles){
+            v.setX(x);
             v.setY(y);
             y += 100;
-            if(y > 500){
+            if(y > 550){
+                x += 120;
                 y = 1;
-                x += 100;
-                v.setX(x);
             }
         }
     }
