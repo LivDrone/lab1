@@ -7,11 +7,11 @@ public class GameController{
 
     GameState gs;
     GameView gv;
-    MoveLogic ml = new MoveLogic(gs.getArraylist());
-    //GameView frame;
+    MoveLogic ml;
+    ArrayLogic al;
 
-
-    public GameController(GameView gv) {
+    public GameController(GameState gs, GameView gv) {
+        this.gs = gs;
         this.gv = gv;
         initComponants();
     }
@@ -20,7 +20,7 @@ public class GameController{
         gv.gasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ml.gas(gs.gv.gasAmount);
+                ml.gas(gv.gasAmount);
             }
         });
         gs.gv.brakeButton.addActionListener(new ActionListener() {

@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class MoveLogic {
     ArrayList<Vehicle> cars; // behöver kopplas till arraylist i Gamecontroller
 
+
     public MoveLogic(ArrayList cars){
         this.cars = cars;
     }
@@ -12,8 +13,6 @@ public class MoveLogic {
         double gas = ((double) amount) / 100;
         for (Vehicle car : cars) {
             car.gas(gas);
-
-            iteration()
         }
 
     }

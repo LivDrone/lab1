@@ -21,7 +21,7 @@ public class PhysicsLogic {
         }
     }
 
-    public void loadOnGarageIfClose(Garage workshop, Vehicle car, ArrayList<Vehicle> cars){
+    public void loadOnGarageIfClose(Garage workshop, Vehicle car){
         int carX = (int) car.getX();
         int carY = (int) car.getY();
         int carW = 80;

@@ -35,6 +35,12 @@ public class GameView extends JFrame {
     JButton turnLeftButton = new JButton("Turn Left");
     JButton turnRightButton = new JButton("Turn Right");
 
+    JButton addCarButton = new JButton("Add car");
+    JButton removeCarButton = new JButton("Remove car");
+
+
+
+
     // Constructor
     public GameView(String framename, GameState gs) {
         gv = this;
@@ -79,12 +85,17 @@ public class GameView extends JFrame {
         controlPanel.add(lowerBedButton, 5);
         controlPanel.add(turnLeftButton, 6);
         controlPanel.add(turnRightButton, 7);
+        controlPanel.add(addCarButton, 8);
+        controlPanel.add(removeCarButton, 9);
+        controlPanel.add(startButton, 10);
+        controlPanel.add(stopButton, 11);
 
-        controlPanel.setPreferredSize(new Dimension((X / 2) + 4, 200));
+
+        controlPanel.setPreferredSize(new Dimension((X / 2) + 250, 200));
         this.add(controlPanel);
         controlPanel.setBackground(Color.CYAN);
 
-
+/*
         startButton.setBackground(Color.blue);
         startButton.setForeground(Color.green);
         startButton.setPreferredSize(new Dimension(X / 5 - 15, 200));
@@ -95,7 +106,7 @@ public class GameView extends JFrame {
         stopButton.setForeground(Color.black);
         stopButton.setPreferredSize(new Dimension(X / 5 - 15, 200));
         this.add(stopButton);
-
+*/
         // Make the frame pack all it's components by respecting the sizes if possible.
         this.pack();
         // Get the computer screen resolution

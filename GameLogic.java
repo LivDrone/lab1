@@ -16,7 +16,7 @@ public class GameLogic{
             if(pl.inGarageTest(gs.volvoWorkshops, car)) {continue;}
             pl.turnAroundTest(car);
             car.move(); //ska till gamelogic
-            pl.loadOnGarageIfClose(gs.volvoWorkshops, car, gs.cars);
+            pl.loadOnGarageIfClose(gs.volvoWorkshops, car);
         }
     }
 
