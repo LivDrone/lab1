@@ -6,71 +6,75 @@ import java.awt.event.ActionListener;
 public class GameController{
 
     GameState gs;
+    GameView gv;
+    MoveLogic ml = new MoveLogic(gs.getArraylist());
+    //GameView frame;
 
-    public GameController(GameState gs) {
-        this.gs = gs;
+
+    public GameController(GameView gv) {
+        this.gv = gv;
         initComponants();
     }
 
     public void initComponants () {
-        gs.gv.gasButton.addActionListener(new ActionListener() {
+        gv.gasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gs.gl.ml.gas(gs.gv.gasAmount);
+                ml.gas(gs.gv.gasAmount);
             }
         });
         gs.gv.brakeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gs.gl.ml.brake(gs.gv.brakeAmount);
+                ml.brake(gs.gv.brakeAmount);
             }
         });
         gs.gv.turboOnButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gs.gl.ml.saabTurboOn();
+                ml.saabTurboOn();
             }
         });
         gs.gv.liftBedButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gs.gl.ml.scaniaLiftBed();
+                ml.scaniaLiftBed();
             }
         });
         gs.gv.turboOffButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gs.gl.ml.saabTurboOff();
+                ml.saabTurboOff();
             }
         });
         gs.gv.lowerBedButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gs.gl.ml.lowerLiftBed();
+                ml.lowerLiftBed();
             }
         });
         gs.gv.startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gs.gl.ml.startAllCars();
+                ml.startAllCars();
             }
         });
         gs.gv.stopButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gs.gl.ml.stopAllCars();
+                ml.stopAllCars();
             }
         });
         gs.gv.turnLeftButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gs.gl.ml.turnLeft();
+                ml.turnLeft();
             }
         });
         gs.gv.turnRightButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gs.gl.ml.turnRight();
+                ml.turnRight();
             }
         });
     }

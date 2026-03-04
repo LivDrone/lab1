@@ -8,8 +8,12 @@ public class GameView extends JFrame {
     private static final int Y = 800;
 
     // The controller member
+    GameView gv;
     GameState gs;
     DrawPanel drawPanel;
+
+
+    GameController gc = new GameController(gs, gv);
 
     JPanel controlPanel = new JPanel();
     JPanel gasPanel = new JPanel();
@@ -33,6 +37,7 @@ public class GameView extends JFrame {
 
     // Constructor
     public GameView(String framename, GameState gs) {
+        gv = this;
         this.gs = gs;
         this.drawPanel = new DrawPanel(X, Y - 240, this.gs);
         initComponents(framename);

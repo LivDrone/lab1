@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 
 public class GameLogic{
-    MoveLogic ml = new MoveLogic();
+    // MoveLogic ml = new MoveLogic();
     PhysicsLogic pl = new PhysicsLogic();
     GameState gs;
 

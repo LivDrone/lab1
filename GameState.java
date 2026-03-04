@@ -13,12 +13,14 @@ public class GameState {
     GameView gv;
     GameController gc;
     GameState gs;
+    GameIteration gi;
 
     public GameState(){
         gs = this;
         gv = new GameView("Gamesim 2.0", gs);
         gc = new GameController(gs);
         gl = new GameLogic(gs);
+        gi = new GameIteration(gs.getArraylist());
 
 
         volvoWorkshops = new Garage(Volvo240.class, 300, 300, 10, 7 );
