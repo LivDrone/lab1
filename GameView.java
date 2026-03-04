@@ -2,6 +2,7 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class GameView extends JFrame {
     private static final int X = 800;
@@ -11,17 +12,23 @@ public class GameView extends JFrame {
     GameView gv;
     GameState gs;
     DrawPanel drawPanel;
+    GameController gc;
+    ArrayList<Vehicle> cars;
 
 
-    GameController gc = new GameController(gs, gv);
+
+    //GameController gc = new GameController(gs, gv);
 
     JPanel controlPanel = new JPanel();
     JPanel gasPanel = new JPanel();
+    JPanel modelPanel = new JPanel();
     JSpinner gasSpinner = new JSpinner();
+    JSpinner modelSpinner = new JSpinner(); //Spinner för val bilmodel
 
     int gasAmount = 0;
     int brakeAmount = 0;
     JLabel gasLabel = new JLabel("Amount of gas");
+    JLabel modelLabel = new JLabel("Model");
 
     JButton gasButton = new JButton("Gas");
     JButton brakeButton = new JButton("Brake");
@@ -46,6 +53,8 @@ public class GameView extends JFrame {
         gv = this;
         this.gs = gs;
         this.drawPanel = new DrawPanel(X, Y - 240, this.gs);
+        this.gc = new GameController(gs, gv);
+        this.cars = gs.getArraylist();
         initComponents(framename);
     }
 
@@ -69,9 +78,28 @@ public class GameView extends JFrame {
             }
         });
 
+        SpinnerModel listModel = new SpinnerListModel(cars);
+            modelSpinner = new JSpinner(listModel);
+            modelSpinner.addChangeListener(new ChangeListener(){
+                public void stateChanged (ChangeEvent e){
+
+            }
+        });
+
+
+
+
+
+
         gasPanel.setLayout(new BorderLayout());
         gasPanel.add(gasLabel, BorderLayout.PAGE_START);
-        gasPanel.add(gasSpinner, BorderLayout.PAGE_END);
+        gasPanel.add(gasSpinner, BorderLayout.AFTER_LINE_ENDS);
+
+        this.add(gasPanel);
+
+        modelPanel.setLayout(new BorderLayout());
+        modelPanel.add(modelLabel, BorderLayout.AFTER_LINE_ENDS);
+        modelPanel.add(modelSpinner, BorderLayout.AFTER_LINE_ENDS);
 
         this.add(gasPanel);
 

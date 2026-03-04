@@ -4,10 +4,9 @@ public class MoveLogic {
     ArrayList<Vehicle> cars; // behöver kopplas till arraylist i Gamecontroller
 
 
-    public MoveLogic(ArrayList cars){
+    public MoveLogic(ArrayList<Vehicle> cars){
         this.cars = cars;
     }
-
 
     public void gas(double amount) {
         double gas = ((double) amount) / 100;

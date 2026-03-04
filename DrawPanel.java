@@ -10,7 +10,6 @@ public class DrawPanel extends JPanel{
 
     GameState gs;
     BufferedImage vehicleImage;
-
     //Do not change, we want a specific volvo workshop so it does not need to be generalized
     BufferedImage volvoWorkshopImage;
     Point volvoWorkshopPoint = new Point(300,300);
