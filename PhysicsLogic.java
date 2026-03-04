@@ -4,7 +4,7 @@ public class PhysicsLogic {
 
     private int ref = 0;
 
-    public void turnAroundTest(Vehicle car){
+    public void turnAroundTest(Vehicle car) {
         int carX = (int) car.getX();
         int carY = (int) car.getY();
         int carW = 100;
@@ -18,13 +18,13 @@ public class PhysicsLogic {
         if (carX + carW >= maxX ||
                 carY + carH >= maxY ||
                 carX <= minX ||
-                carY <= minY){
+                carY <= minY) {
             car.turnLeft();
             car.turnLeft();
         }
     }
 
-    public void loadOnGarageIfClose(Garage workshop, Vehicle car){
+    public void loadOnGarageIfClose(Garage workshop, Vehicle car) {
         int carX = (int) car.getX();
         int carY = (int) car.getY();
         int carW = 80;
@@ -38,40 +38,34 @@ public class PhysicsLogic {
         if (carX < garX + garW &&
                 carX + carW > garX &&
                 carY < garY + garH &&
-                carY + carH > garY){
+                carY + carH > garY) {
             workshop.loadOn(car);
             putInGarage(workshop, car);
         }
     }
 
-    public boolean inGarageTest(Garage workshop, Vehicle car){
+    public boolean inGarageTest(Garage workshop, Vehicle car) {
         return workshop.getLoader().getLoaded().contains(car);
     }
 
-    public void putInGarage(Garage workshop, Vehicle car){
-        if (inGarageTest(workshop, car)){
+    public void putInGarage(Garage workshop, Vehicle car) {
+        if (inGarageTest(workshop, car)) {
             car.setX(workshop.getX());
             car.setY(workshop.getY());
         }
     }
 
-    public void placeVehicle(ArrayList vehicles){
+    public void placeVehicle(ArrayList vehicles) {
 
         Vehicle v = (Vehicle) vehicles.get(vehicles.size() - 1);
-        ref += 1;   //antal bilar
 
+        int index = vehicles.size() - 1;
 
-        int y = 1; //init koordinater
-        int x = 1;
+        int x = 1 + (index / 6) * 120;
+        int y = 1 + (index % 6) * 100;
 
         v.setX(x);
         v.setY(y);
-        
-        y += 100 * ref;
-        if(ref > 6){
-            x += 120;
-            y = 1;
-            }
-        }
     }
+}
 
