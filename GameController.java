@@ -10,12 +10,14 @@ public class GameController{
     GameView gv;
     MoveLogic ml;
     ArrayLogic al;
+    PhysicsLogic pl;
 
     public GameController(GameState gs, GameView gv) {
         this.gs = gs;
         this.gv = gv;
         this.ml = new MoveLogic(gs.getArraylist());
-        //ArrayLogic al = new ArrayLogic(Vehicle.class, gs);
+        this.al = new ArrayLogic(gs.getArraylist());
+        this.pl = new PhysicsLogic();
         initComponants();
     }
 
@@ -78,6 +80,19 @@ public class GameController{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ml.turnRight();
+            }
+        }); /////////////////
+        gv.addCarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                al.addCar(gv.model);
+                pl.placeVehicle(gs.getArraylist());
+            }
+        });/////////////////
+        gv.removeCarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                al.removeCar();
             }
         });
     }

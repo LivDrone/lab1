@@ -12,38 +12,23 @@ public class GameState {
     GameState gs;
     GameLogic gl;
     GameView gv;
-    GameController gc;
-
-
+    //PhysicsLogic pl;
 
     public GameState(){
         gs = this;
         gv = new GameView("Gamesim 2.0", gs);
         gl = new GameLogic(gs);
-
-
-
+        //pl = new PhysicsLogic();
         volvoWorkshops = new Garage(Volvo240.class, 300, 300, 10, 7 );
-
-        cars.add(new Volvo240());
-        cars.add(new Volvo240());
-        cars.add(new Saab95());
-        cars.add(new Scania());
-        cars.add(new Scania());
-        cars.add(new Saab95());
-        cars.add(new Scania());
-        cars.add(new Scania());
-        gl.pl.placeVehicles(cars);
-
+        //pl.placeVehicles(cars);//TA bort??
         timer.start();
-
-
     }
 
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             gl.update();
             gv.drawPanel.repaint();
+            //pl.placeVehicles(gs.getArraylist());
         }
     }
 

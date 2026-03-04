@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 
 public class PhysicsLogic {
+
+    private int ref = 0;
+
     public void turnAroundTest(Vehicle car){
         int carX = (int) car.getX();
         int carY = (int) car.getY();
@@ -52,17 +55,23 @@ public class PhysicsLogic {
         }
     }
 
-    public void placeVehicles(ArrayList<Vehicle> vehicles){
-        int y = 1;
+    public void placeVehicle(ArrayList vehicles){
+
+        Vehicle v = (Vehicle) vehicles.get(vehicles.size() - 1);
+        ref += 1;   //antal bilar
+
+
+        int y = 1; //init koordinater
         int x = 1;
-        for (Vehicle v : vehicles){
-            v.setX(x);
-            v.setY(y);
-            y += 100;
-            if(y > 550){
-                x += 120;
-                y = 1;
+
+        v.setX(x);
+        v.setY(y);
+        
+        y += 100 * ref;
+        if(ref > 6){
+            x += 120;
+            y = 1;
             }
         }
     }
-}
+

@@ -14,6 +14,8 @@ public class GameView extends JFrame {
     DrawPanel drawPanel;
     GameController gc;
     ArrayList<Vehicle> cars;
+    AvailableModels am;
+    ArrayList<String> as;
 
 
 
@@ -25,6 +27,7 @@ public class GameView extends JFrame {
     JSpinner gasSpinner = new JSpinner();
     JSpinner modelSpinner = new JSpinner(); //Spinner för val bilmodel
 
+    String model = "Volvo240";
     int gasAmount = 0;
     int brakeAmount = 0;
     JLabel gasLabel = new JLabel("Amount of gas");
@@ -55,6 +58,8 @@ public class GameView extends JFrame {
         this.drawPanel = new DrawPanel(X, Y - 240, this.gs);
         this.gc = new GameController(gs, gv);
         this.cars = gs.getArraylist();
+        this.am = new AvailableModels();
+        this.as = am.getArrayList();
         initComponents(framename);
     }
 
@@ -78,11 +83,11 @@ public class GameView extends JFrame {
             }
         });
 
-        SpinnerModel listModel = new SpinnerListModel(cars);
+        SpinnerModel listModel = new SpinnerListModel(as);
             modelSpinner = new JSpinner(listModel);
             modelSpinner.addChangeListener(new ChangeListener(){
                 public void stateChanged (ChangeEvent e){
-
+                    model = (String)((JSpinner) e.getSource()).getValue();
             }
         });
 
@@ -92,16 +97,16 @@ public class GameView extends JFrame {
 
 
         gasPanel.setLayout(new BorderLayout());
-        gasPanel.add(gasLabel, BorderLayout.PAGE_START);
+        gasPanel.add(gasLabel, BorderLayout.WEST);
         gasPanel.add(gasSpinner, BorderLayout.AFTER_LINE_ENDS);
 
         this.add(gasPanel);
 
         modelPanel.setLayout(new BorderLayout());
-        modelPanel.add(modelLabel, BorderLayout.AFTER_LINE_ENDS);
+        modelPanel.add(modelLabel, BorderLayout.WEST);
         modelPanel.add(modelSpinner, BorderLayout.AFTER_LINE_ENDS);
 
-        this.add(gasPanel);
+        this.add(modelPanel);
 
         controlPanel.setLayout(new GridLayout(2, 4));
 
