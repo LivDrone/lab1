@@ -124,7 +124,9 @@ abstract class Vehicle implements Movable{ //Abstract pga vi vill extenda från 
         
     public void startEngine(){
 	    engineOn = true;
-        currentSpeed = 0.1;
+        if (currentSpeed== 0 ) {
+            currentSpeed = 0.1;
+        }
     }
 
     public void stopEngine(){

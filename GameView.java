@@ -27,7 +27,7 @@ public class GameView extends JFrame {
     JSpinner gasSpinner = new JSpinner();
     JSpinner modelSpinner = new JSpinner(); //Spinner för val bilmodel
 
-    String model = "Volvo240";
+    String model = "";
     int gasAmount = 0;
     int brakeAmount = 0;
     JLabel gasLabel = new JLabel("Amount of gas");

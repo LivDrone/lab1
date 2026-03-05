@@ -6,6 +6,8 @@ public class AvailableModels {
 
     public AvailableModels(){
         this.modelName = new ArrayList<String>();
+        modelName.add("                   ");
+        modelName.add("Random");
         modelName.add("Saab95");
         modelName.add("Volvo240");
         modelName.add("Scania");
