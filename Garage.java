@@ -1,5 +1,5 @@
 public class Garage<T extends Vehicle> {
-
+    //Garage "laddar" bilar av viss typ
     private Class<T> allowedType;
     private Loader<T> loader;
     private double xPos;

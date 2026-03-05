@@ -2,6 +2,8 @@ import java.util.ArrayDeque;
 
 public class Loader<T extends Vehicle> implements Loadable<T> {
 
+    //Generell loader för transport/garage
+
     public ArrayDeque<T> loaded = new ArrayDeque<>();
     public int capacity;
     public int maxSize;
@@ -24,9 +26,6 @@ public class Loader<T extends Vehicle> implements Loadable<T> {
         return pickUp;
     }
 
-
-
-
     public void updatePos(double x, double y){
        for (T v: loaded){
            v.setX(x);
@@ -40,16 +39,6 @@ public class Loader<T extends Vehicle> implements Loadable<T> {
             loaded.add(item);
         }
     }
-
-    /*             ###### Beräkningen på hur nära bilarna är görs i Gamelogic #######
-    @Override
-    public void loadOn(T item, double x, double y) {
-        boolean calc = calcDist(item, x,y);
-        if (loaded.size() < capacity && item.getSize() <= maxSize && calc) {
-            loaded.add(item);
-        }
-    }
-    */
 
     @Override
     public T loadOff() {

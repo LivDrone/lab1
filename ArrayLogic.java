@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
+//Logik för att lägga till/ta bort object in game
 public class ArrayLogic {
 
     private ArrayList<Vehicle> cars;
     AvailableModels am;
     ArrayList<String> amlist;
     int rand;
-
 
     public ArrayLogic(ArrayList<Vehicle> cars) {
         this.cars = cars;

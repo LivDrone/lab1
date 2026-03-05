@@ -3,6 +3,8 @@ public class Ramp {
     private int minAngle;
     private int angle = minAngle;
 
+
+    //Metoder för ramp vid composition med klass.
     public Ramp(int maxAngle, int minAngle){
         this.maxAngle = maxAngle;
         this.minAngle = minAngle;

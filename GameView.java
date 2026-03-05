@@ -17,10 +17,7 @@ public class GameView extends JFrame {
     AvailableModels am;
     ArrayList<String> as;
 
-
-
-    //GameController gc = new GameController(gs, gv);
-
+    //Knappar i spel
     JPanel controlPanel = new JPanel();
     JPanel gasPanel = new JPanel();
     JPanel modelPanel = new JPanel();
@@ -48,9 +45,6 @@ public class GameView extends JFrame {
     JButton addCarButton = new JButton("Add car");
     JButton removeCarButton = new JButton("Remove car");
 
-
-
-
     // Constructor
     public GameView(String framename, GameState gs) {
         gv = this;
@@ -70,6 +64,7 @@ public class GameView extends JFrame {
         this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
         this.add(drawPanel);
 
+        //Spinner Gas/break
         SpinnerModel spinnerModel =
                 new SpinnerNumberModel(0, //initial value
                         0, //min
@@ -83,6 +78,7 @@ public class GameView extends JFrame {
             }
         });
 
+        //Spinner add car:model
         SpinnerModel listModel = new SpinnerListModel(as);
             modelSpinner = new JSpinner(listModel);
             modelSpinner.addChangeListener(new ChangeListener(){
@@ -90,22 +86,16 @@ public class GameView extends JFrame {
                     model = (String)((JSpinner) e.getSource()).getValue();
             }
         });
-
-
-
-
-
-
+        //Layout spinner för gas/break
         gasPanel.setLayout(new BorderLayout());
         gasPanel.add(gasLabel, BorderLayout.WEST);
         gasPanel.add(gasSpinner, BorderLayout.AFTER_LINE_ENDS);
-
         this.add(gasPanel);
 
+        //Layout spinner för modell
         modelPanel.setLayout(new BorderLayout());
         modelPanel.add(modelLabel, BorderLayout.WEST);
         modelPanel.add(modelSpinner, BorderLayout.AFTER_LINE_ENDS);
-
         this.add(modelPanel);
 
         controlPanel.setLayout(new GridLayout(2, 4));
@@ -128,6 +118,7 @@ public class GameView extends JFrame {
         this.add(controlPanel);
         controlPanel.setBackground(Color.CYAN);
 
+        //Gamla knapper för start/stopp
 /*
         startButton.setBackground(Color.blue);
         startButton.setForeground(Color.green);

@@ -1,5 +1,5 @@
 interface  Movable {
-    //Drive
+    //Move interface för vehicle
     void move();
     void turnLeft();
     void turnRight();

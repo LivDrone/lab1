@@ -2,8 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.reflect.Array;
 
+//Logik för kopplig mellan knappar och logik/metoder
 public class GameController{
 
     GameState gs;
@@ -21,6 +21,7 @@ public class GameController{
         initComponants();
     }
 
+    //Actionslisteners för JFrame knapper samt delegering till metoder att kalla för knapparna.
     public void initComponants () {
         gv.gasButton.addActionListener(new ActionListener() {
             @Override

@@ -12,6 +12,8 @@ public class Transport extends Vehicle implements Raiseable {
         this.loader = new Loader<>(10, 6);
     }
 
+
+    //Override specifiering av metoder från vehicle och ramp
     @Override
     public void raise() {
         if (getCurrentSpeed() == 0) {
@@ -41,6 +43,7 @@ public class Transport extends Vehicle implements Raiseable {
         }
     }
 
+    //metoder  specifika för transport utöver vehicle
     public void loadOn(Vehicle vehicle){
         if(getCurrentSpeed() == 0) {
 

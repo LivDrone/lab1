@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class PhysicsLogic {
 
-    private int ref = 0;
+    //Logik/metoder för egenskaper för "Världen"
 
     public void turnAroundTest(Vehicle car) {
         int carX = (int) car.getX();

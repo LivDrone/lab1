@@ -8,7 +8,7 @@ class Scania extends Vehicle implements Raiseable{
         super("Scania", 2, 200, new Color(9, 205, 218), 50,"pics/Scania.jpg" );
         ramp = new Ramp(70,0);
     }
-    //flak
+    //Override specifiering av metoder från vehicle/ramp
     @Override
     public void raise() {
         if (getCurrentSpeed() == 0) {

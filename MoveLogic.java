@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class MoveLogic {
-    ArrayList<Vehicle> cars; // behöver kopplas till arraylist i Gamecontroller
-
+    //Logik/metoder för rörelse av "ingame objects"
+    ArrayList<Vehicle> cars;
 
     public MoveLogic(ArrayList<Vehicle> cars){
         this.cars = cars;
