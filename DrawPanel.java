@@ -8,15 +8,15 @@ import javax.swing.*;
 // This panel represents the animated part of the view with the car images.
 public class DrawPanel extends JPanel{
 
-    GameState gs;
+    Controller cont;
     BufferedImage vehicleImage;
     //Do not change, we want a specific volvo workshop so it does not need to be generalized
     BufferedImage volvoWorkshopImage;
     Point volvoWorkshopPoint = new Point(300,300);
 
     // Initializes the panel and reads the images
-    public DrawPanel(int x, int y, GameState gs) {
-        this.gs = gs;
+    public DrawPanel(int x, int y, Controller cont) {
+        this.cont = cont;
         this.setDoubleBuffered(true);
         this.setPreferredSize(new Dimension(x, y));
         this.setBackground(Color.green);
@@ -46,7 +46,7 @@ public class DrawPanel extends JPanel{
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        carImages(gs.getArraylist(), g);
+        carImages(cont.getArraylist(), g);
         g.drawImage(volvoWorkshopImage, volvoWorkshopPoint.x, volvoWorkshopPoint.y, null);
     }
 }

@@ -1,22 +1,20 @@
-import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 //Logik för kopplig mellan knappar och logik/metoder
 public class GameController{
 
-    GameState gs;
+    Controller cont;
     GameView gv;
     MoveLogic ml;
     ArrayLogic al;
     PhysicsLogic pl;
 
-    public GameController(GameState gs, GameView gv) {
-        this.gs = gs;
+    public GameController(Controller cont, GameView gv) {
+        this.cont = cont;
         this.gv = gv;
-        this.ml = new MoveLogic(gs.getArraylist());
-        this.al = new ArrayLogic(gs.getArraylist());
+        this.ml = new MoveLogic(cont.getArraylist());
+        this.al = new ArrayLogic(cont.getArraylist());
         this.pl = new PhysicsLogic();
         initComponants();
     }
@@ -87,7 +85,7 @@ public class GameController{
             @Override
             public void actionPerformed(ActionEvent e) {
                 al.addCar(gv.model);
-                pl.placeVehicle(gs.getArraylist());
+                pl.placeVehicle(cont.getArraylist());
             }
         });/////////////////
         gv.removeCarButton.addActionListener(new ActionListener() {

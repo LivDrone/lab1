@@ -1,19 +1,19 @@
 
 public class GameLogic{
     PhysicsLogic pl = new PhysicsLogic();
-    GameState gs;
+    Controller cont;
 
-    public GameLogic(GameState gs){
-        this.gs = gs;
+    public GameLogic(Controller cont){
+        this.cont = cont;
 
     }
 
     public void update(){
-        for (Vehicle car : gs.getArraylist()){
-            if(pl.inGarageTest(gs.volvoWorkshops, car)) {continue;}
+        for (Vehicle car : cont.getArraylist()){
+            if(pl.inGarageTest(cont.volvoWorkshops, car)) {continue;}
             pl.turnAroundTest(car);
             car.move();
-            pl.loadOnGarageIfClose(gs.volvoWorkshops, car);
+            pl.loadOnGarageIfClose(cont.volvoWorkshops, car);
         }
     }
 }

@@ -10,7 +10,7 @@ public class GameView extends JFrame {
 
     // The controller member
     GameView gv;
-    GameState gs;
+    Controller cont;
     DrawPanel drawPanel;
     GameController gc;
     ArrayList<Vehicle> cars;
@@ -46,12 +46,12 @@ public class GameView extends JFrame {
     JButton removeCarButton = new JButton("Remove car");
 
     // Constructor
-    public GameView(String framename, GameState gs) {
+    public GameView(String framename, Controller cont) {
         gv = this;
-        this.gs = gs;
-        this.drawPanel = new DrawPanel(X, Y - 240, this.gs);
-        this.gc = new GameController(gs, gv);
-        this.cars = gs.getArraylist();
+        this.cont = cont;
+        this.drawPanel = new DrawPanel(X, Y - 240, this.cont);
+        this.gc = new GameController(cont, gv);
+        this.cars = cont.getArraylist();
         this.am = new AvailableModels();
         this.as = am.getArrayList();
         initComponents(framename);

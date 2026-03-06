@@ -4,17 +4,17 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 //State/Controller
-public class GameState {
+public class Controller {
     private final int delay = 50;
     private Timer timer = new Timer(delay, new TimerListener());
     private ArrayList<Vehicle> cars = new ArrayList<>();
     Garage volvoWorkshops;
-    GameState gs;
+    Controller gs;
     GameLogic gl;
     GameView gv;
 
     //Constructor gamestate
-    public GameState(){
+    public Controller(){
         gs = this;
         gv = new GameView("Gamesim 2.0", gs);
         gl = new GameLogic(gs);
