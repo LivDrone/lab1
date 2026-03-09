@@ -4,9 +4,9 @@ public class GameLogic{
     Controller cont;
     MoveLogic ml;
 
-    public GameLogic(Controller cont){
+    public GameLogic(Controller cont, MoveLogic ml){
         this.cont = cont;
-
+        this.ml = ml;
     }
 
     public void update(){

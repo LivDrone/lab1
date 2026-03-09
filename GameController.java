@@ -9,9 +9,9 @@ public class GameController{
     ArrayLogic al;
     PhysicsLogic pl;
 
-    public GameController(GameView gv) {
+    public GameController(GameView gv, MoveLogic ml) {
         this.gv = gv;
-        this.ml = new MoveLogic();
+        this.ml = ml;
         this.al = new ArrayLogic(ml.getArraylist());
         this.pl = new PhysicsLogic();
         initComponants();

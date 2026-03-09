@@ -12,13 +12,15 @@ public class Controller {
     Controller gs;
     GameLogic gl;
     GameView gv;
+    MoveLogic ml;
 
 
     //Constructor gamestate
     public Controller(){
         gs = this;
+        ml = new MoveLogic();
         gv = new GameView("Gamesim 2.0", ml);
-        gl = new GameLogic(gs);
+        gl = new GameLogic(gs, ml);
         volvoWorkshops = new Garage(Volvo240.class, 300, 300, 10, 7 );
         timer.start();
     }

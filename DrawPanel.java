@@ -8,7 +8,6 @@ import javax.swing.*;
 // This panel represents the animated part of the view with the car images.
 public class DrawPanel extends JPanel{
 
-    Controller cont;
     BufferedImage vehicleImage;
     //Do not change, we want a specific volvo workshop so it does not need to be generalized
     BufferedImage volvoWorkshopImage;
@@ -16,11 +15,12 @@ public class DrawPanel extends JPanel{
     MoveLogic ml;
 
     // Initializes the panel and reads the images
-    public DrawPanel(int x, int y, Controller cont) {
-        this.cont = cont;
+    public DrawPanel(int x, int y, MoveLogic ml) {
+        this.ml = ml;
         this.setDoubleBuffered(true);
         this.setPreferredSize(new Dimension(x, y));
         this.setBackground(Color.green);
+
         // Print an error message in case file is not found with a try/catch block
         try {
             volvoWorkshopImage = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/VolvoBrand.jpg"));

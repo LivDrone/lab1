@@ -50,8 +50,8 @@ public class GameView extends JFrame {
     public GameView(String framename, MoveLogic ml) {
         gv = this;
         this.ml = ml;
-        this.drawPanel = new DrawPanel(X, Y - 240, this.cont);
-        this.gc = new GameController(gv);
+        this.drawPanel = new DrawPanel(X, Y - 240, ml);
+        this.gc = new GameController(gv, ml);
         this.cars = ml.getArraylist();
         this.am = new AvailableModels();
         this.as = am.getArrayList();
