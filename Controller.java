@@ -12,7 +12,7 @@ public class Controller {
     Controller gs;
     GameLogic gl;
     GameView gv;
-    MoveLogic ml;
+
 
     //Constructor gamestate
     public Controller(){
