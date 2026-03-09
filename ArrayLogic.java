@@ -21,13 +21,14 @@ public class ArrayLogic {
         }
 
         if (cars.size() < 10) {
-            if (model == "Saab95") {
-                cars.add(new Saab95());
-            } else if (model == "Volvo240") {
-                cars.add(new Volvo240());
-            } else if (model == "Scania") {
-                cars.add(new Scania());
-
+            if (model.equals("Saab95")) {
+                cars.add(VehicleFactory.createSaab());
+            } else if (model.equals("Volvo240")) {
+                cars.add(VehicleFactory.createVolvo240());
+            } else if (model.equals("Scania")) {
+                cars.add(VehicleFactory.createScania());
+            } else if (model.equals("Random")) {
+                cars.add(VehicleFactory.createRandom());
             }
         }
     }

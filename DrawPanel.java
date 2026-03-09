@@ -46,7 +46,7 @@ public class DrawPanel extends JPanel{
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        carImages(cont.getArraylist(), g);
+        carImages(ml.getArraylist(), g);
         g.drawImage(volvoWorkshopImage, volvoWorkshopPoint.x, volvoWorkshopPoint.y, null);
     }
 }

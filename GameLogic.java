@@ -9,7 +9,7 @@ public class GameLogic{
     }
 
     public void update(){
-        for (Vehicle car : cont.getArraylist()){
+        for (Vehicle car : ml.getArraylist()){
             if(pl.inGarageTest(cont.volvoWorkshops, car)) {continue;}
             pl.turnAroundTest(car);
             car.move();

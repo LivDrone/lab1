@@ -10,8 +10,7 @@ public class GameController{
     ArrayLogic al;
     PhysicsLogic pl;
 
-    public GameController(Controller cont, GameView gv) {
-        this.cont = cont;
+    public GameController(GameView gv) {
         this.gv = gv;
         this.ml = new MoveLogic(cont.getArraylist());
         this.al = new ArrayLogic(cont.getArraylist());
@@ -84,6 +83,7 @@ public class GameController{
         gv.addCarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //ml.addcar();
                 al.addCar(gv.model);
                 pl.placeVehicle(cont.getArraylist());
             }

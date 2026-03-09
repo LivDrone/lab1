@@ -30,7 +30,7 @@ public class GameView extends JFrame {
     JLabel gasLabel = new JLabel("Amount of gas");
     JLabel modelLabel = new JLabel("Model");
 
-    JButton gasButton = new JButton("Gas");
+    final JButton gasButton = new JButton("Gas");
     JButton brakeButton = new JButton("Brake");
     JButton turboOnButton = new JButton("Saab Turbo on");
     JButton turboOffButton = new JButton("Saab Turbo off");
@@ -48,7 +48,7 @@ public class GameView extends JFrame {
     // Constructor
     public GameView(String framename, Controller cont) {
         gv = this;
-        this.cont = cont;
+        this.ml = ml;
         this.drawPanel = new DrawPanel(X, Y - 240, this.cont);
         this.gc = new GameController(cont, gv);
         this.cars = cont.getArraylist();

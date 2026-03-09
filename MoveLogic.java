@@ -4,8 +4,8 @@ public class MoveLogic {
     //Logik/metoder för rörelse av "ingame objects"
     ArrayList<Vehicle> cars;
 
-    public MoveLogic(ArrayList<Vehicle> cars){
-        this.cars = cars;
+    public MoveLogic(){
+        cars = new ArrayList<>();
     }
 
     public void gas(double amount) {
