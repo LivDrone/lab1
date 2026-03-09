@@ -8,6 +8,7 @@ public class ArrayLogic {
     ArrayList<String> amlist;
     int rand;
 
+
     public ArrayLogic(ArrayList<Vehicle> cars) {
         this.cars = cars;
         this.am = new AvailableModels();
@@ -15,10 +16,6 @@ public class ArrayLogic {
     }
 
     public void addCar(String model) {
-        if (model == "Random") {
-            rand = (int)(Math.random() * amlist.size()-1)+2;
-            model = amlist.get(rand);
-        }
 
         if (cars.size() < 10) {
             if (model.equals("Saab95")) {

@@ -4,7 +4,6 @@ import java.awt.event.ActionListener;
 //Logik för kopplig mellan knappar och logik/metoder
 public class GameController{
 
-    Controller cont;
     GameView gv;
     MoveLogic ml;
     ArrayLogic al;
@@ -12,8 +11,8 @@ public class GameController{
 
     public GameController(GameView gv) {
         this.gv = gv;
-        this.ml = new MoveLogic(cont.getArraylist());
-        this.al = new ArrayLogic(cont.getArraylist());
+        this.ml = new MoveLogic();
+        this.al = new ArrayLogic(ml.getArraylist());
         this.pl = new PhysicsLogic();
         initComponants();
     }
@@ -85,7 +84,7 @@ public class GameController{
             public void actionPerformed(ActionEvent e) {
                 //ml.addcar();
                 al.addCar(gv.model);
-                pl.placeVehicle(cont.getArraylist());
+                pl.placeVehicle(ml.getArraylist());
             }
         });/////////////////
         gv.removeCarButton.addActionListener(new ActionListener() {

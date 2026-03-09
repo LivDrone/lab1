@@ -16,6 +16,7 @@ public class GameView extends JFrame {
     ArrayList<Vehicle> cars;
     AvailableModels am;
     ArrayList<String> as;
+    MoveLogic ml;
 
     //Knappar i spel
     JPanel controlPanel = new JPanel();
@@ -46,12 +47,12 @@ public class GameView extends JFrame {
     JButton removeCarButton = new JButton("Remove car");
 
     // Constructor
-    public GameView(String framename, Controller cont) {
+    public GameView(String framename, MoveLogic ml) {
         gv = this;
         this.ml = ml;
         this.drawPanel = new DrawPanel(X, Y - 240, this.cont);
-        this.gc = new GameController(cont, gv);
-        this.cars = cont.getArraylist();
+        this.gc = new GameController(gv);
+        this.cars = ml.getArraylist();
         this.am = new AvailableModels();
         this.as = am.getArrayList();
         initComponents(framename);

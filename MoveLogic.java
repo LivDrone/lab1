@@ -2,7 +2,8 @@ import java.util.ArrayList;
 
 public class MoveLogic {
     //Logik/metoder för rörelse av "ingame objects"
-    ArrayList<Vehicle> cars;
+
+    private ArrayList<Vehicle> cars;
 
     public MoveLogic(){
         cars = new ArrayList<>();
@@ -81,5 +82,7 @@ public class MoveLogic {
             car.turnRight();
         }
     }
+    public ArrayList<Vehicle> getArraylist(){return cars;}
+
 }
 

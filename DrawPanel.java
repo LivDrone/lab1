@@ -13,6 +13,7 @@ public class DrawPanel extends JPanel{
     //Do not change, we want a specific volvo workshop so it does not need to be generalized
     BufferedImage volvoWorkshopImage;
     Point volvoWorkshopPoint = new Point(300,300);
+    MoveLogic ml;
 
     // Initializes the panel and reads the images
     public DrawPanel(int x, int y, Controller cont) {

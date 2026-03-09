@@ -2,6 +2,7 @@
 public class GameLogic{
     PhysicsLogic pl = new PhysicsLogic();
     Controller cont;
+    MoveLogic ml;
 
     public GameLogic(Controller cont){
         this.cont = cont;
